@@ -3,7 +3,7 @@ variable "region" {
   description = "Region where the Infrastructure should be deployed"
 }
 
-variable "cidr_range" {
+variable "cidr_block" {
   type        = "string"
   description = "CIDR Range to be used for the VPC"
 }
