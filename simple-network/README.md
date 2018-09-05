@@ -5,7 +5,7 @@
 
 Quicklinks to the sources for each benchmarked infrastructure as code framework:
 
-- [Terraform](/terraform)
+- [Terraform](./terraform)
 
 # Use Case Description
 
