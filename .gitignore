@@ -9,4 +9,4 @@
 *.tfvars
 
 # Mac Pseudo Files
-.DS-Store
+.DS_Store
