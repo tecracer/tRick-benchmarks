@@ -1,0 +1,10 @@
+name: simple-network
+description: A AWS simple-network setup
+runtime: nodejs
+template:
+  description: A minimal AWS TypeScript program
+  config:
+    aws:region:
+      description: The AWS region to deploy into
+      default: us-east-1
+    
