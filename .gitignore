@@ -10,3 +10,6 @@
 
 # Mac Pseudo Files
 .DS_Store
+
+# VS Code Configuration
+.vscode
