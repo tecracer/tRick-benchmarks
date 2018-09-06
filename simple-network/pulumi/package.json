@@ -1,0 +1,14 @@
+{
+    "name": "simple-network",
+    "version": "0.1.0",
+    "description": "Simple-Network Package developed for the pulumi tRick-benchmark",
+    "license": "MIT",
+    "private": true,
+    "devDependencies": {
+        "@types/node": "latest"
+    },
+    "dependencies": {
+        "@pulumi/pulumi": "latest",
+        "@pulumi/aws": "latest"
+    }
+}
