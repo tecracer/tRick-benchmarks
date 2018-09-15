@@ -1,0 +1,74 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "PublicRoute": {
+      "Properties": {
+        "VpcId": {
+          "Ref": "vpc"
+        }
+      },
+      "Type": "AWS::EC2::RouteTable"
+    },
+    "PublicSubnet": {
+      "Properties": {
+        "AvailabilityZone": "eu-central-1a",
+        "CidrBlock": "10.0.1.0/24",
+        "VpcId": {
+          "Ref": "vpc"
+        }
+      },
+      "Type": "AWS::EC2::Subnet"
+    },
+    "WebServerSG": {
+      "Properties": {
+        "GroupDescription": "Demo Security Group Webserver",
+        "GroupName": "WebServerSG",
+        "SecurityGroupIngress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "FromPort": 80,
+            "IpProtocol": "tcp",
+            "ToPort": 80
+          }
+        ],
+        "VpcId": {
+          "Ref": "vpc"
+        }
+      },
+      "Type": "AWS::EC2::SecurityGroup"
+    },
+    "igateway": {
+      "Properties": {},
+      "Type": "AWS::EC2::InternetGateway"
+    },
+    "igatewayattachment": {
+      "Properties": {
+        "InternetGatewayId": {
+          "Ref": "igateway"
+        },
+        "VpcId": {
+          "Ref": "vpc"
+        }
+      },
+      "Type": "AWS::EC2::VPCGatewayAttachment"
+    },
+    "route1": {
+      "Properties": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": {
+          "Ref": "igateway"
+        },
+        "RouteTableId": {
+          "Ref": "PublicRoute"
+        }
+      },
+      "Type": "AWS::EC2::Route"
+    },
+    "vpc": {
+      "Properties": {
+        "CidrBlock": "10.0.0.0/16"
+      },
+      "Type": "AWS::EC2::VPC"
+    }
+  }
+}
