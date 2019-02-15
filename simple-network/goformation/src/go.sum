@@ -1,0 +1,9 @@
+github.com/awslabs/goformation v1.2.0 h1:tA2OO1NtQ9ZFn/iDc3HMvfuoa80CZp36UquiRjRShNg=
+github.com/awslabs/goformation v1.2.0/go.mod h1:caLRalqRpGGTI7ZGd6Um+OmF8i45WaFJcVUSW4vaQ9w=
+github.com/mitchellh/mapstructure v1.0.0 h1:vVpGvMXJPqSDh2VYHF7gsfQj8Ncx+Xw5Y1KHeTRY+7I=
+github.com/mitchellh/mapstructure v1.0.0/go.mod h1:FVVH3fgwuzCH5S8UJGiWEs2h04kUh9fWfEaFds41c1Y=
+github.com/sanathkr/yaml v1.0.0 h1:/4Sf5/tRkpZVvkD8nHSIBTvfY2m25dEGgh6EdeJe/wc=
+github.com/sanathkr/yaml v1.0.0/go.mod h1:tQTYKOQgxoH3v6dEmdHiz4JG+nbxWwM5fgPQUpSZqVQ=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
+gopkg.in/yaml.v2 v2.2.1 h1:mUhvW9EsL+naU5Q3cakzfE91YhliOondGd6ZrsDBHQE=
+gopkg.in/yaml.v2 v2.2.1/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=
