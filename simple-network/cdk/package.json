@@ -1,0 +1,27 @@
+{
+  "name": "cdk",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tecracer/tRick-benchmarks"
+  },
+  "license": "MIT",
+  "bin": {
+    "cdk": "bin/cdk.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/node": "^8.9.4",
+    "typescript": "^3.1.2",
+    "aws-cdk": "^0.24.1"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-ec2": "^0.24.1",
+    "@aws-cdk/cdk": "^0.24.1",
+    "source-map-support": "^0.5.9"
+  }
+}

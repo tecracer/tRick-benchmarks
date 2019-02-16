@@ -7,6 +7,8 @@ Quicklinks to the sources for each benchmarked infrastructure as code framework:
 
 - [Terraform](./terraform)
 - [pulumi - TypeScript](./pulumi)
+- [GoFormation](./goformation)
+- [AWS CDK](./cdk)
 
 # Use Case Description
 
