@@ -24,5 +24,5 @@ The setup identified can be seen in the infrastrucutre diagram below.
 
 ![Infrastructure Diagram - Simple Network on AWS](./assets/simple-network.svg)
 
-> Note: The setup does not represent a whole production ready network setup regarding high availability, workload distribution/isolation, etc. for which more subnets should be incorporated.
+> Note: The setup does not represent a whole production ready network setup regarding high availability, workload distribution/isolation, etc. for which more subnets should be incorporated.<br/><br/>
 > But these snippets might be used to create your own infrastructure as code templates.
