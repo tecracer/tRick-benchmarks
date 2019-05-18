@@ -6,24 +6,21 @@ help:
 
 stack = trickvpc
 
-init: ## First time init
+install: ## First time init
 	mkdir bin
 	cd src && export GO111MODULE=on && go mod init 
 
-build: ## build binary for current os
+init:
+
+pre_build: ## build binary for current os
 	cd src && export GO111MODULE=on && go build -o ../bin/generate main.go 
 
-run: build ## generate
+build:  ## generate
 	bin/generate >stacks/$(stack)/template.json
 
-runlight:  ## just generate w/o build
-	bin/generate >stacks/$(stack)/template.json
-
-
-
-deploy: build run ## Deploy generated Cloudformation
+deploy: ## Deploy generated Cloudformation
 		clouds -r eu-central-1 update   -c --events $(stack)
 
-delete: ## Delete generated Cloudformation
+remove: ## Delete generated Cloudformation
 		clouds -r eu-central-1 delete   -f --events $(stack)
 
