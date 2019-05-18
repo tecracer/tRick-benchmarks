@@ -1,7 +1,0 @@
-config:
-  aws:region: eu-west-3
-  simple-network:cidr_block: 10.0.0.0/16
-  simple-network:subnet_cidr_block: 10.0.0.0/24
-  simple-network:tag_created_for: tRick Benchmark
-  simple-network:tag_created_by: pulumi
-  simple-network:availability_zone: a
