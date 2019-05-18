@@ -1,10 +1,3 @@
 {
-  "app": "node bin/cdk.js",
-  "context": {
-    "availability-zones:account=180541654625:region=eu-west-3": [
-      "eu-west-3a",
-      "eu-west-3b",
-      "eu-west-3c"
-    ]
-  }
+  "app": "node bin/cdk.js"
 }
