@@ -1,6 +1,7 @@
 variable "region" {
   type        = "string"
   description = "Region where the Infrastructure should be deployed"
+  default = "eu-central-1"
 }
 
 variable "availability_zone" {
@@ -12,6 +13,7 @@ variable "availability_zone" {
 variable "cidr_block" {
   type        = "string"
   description = "CIDR Range to be used for the VPC"
+  default     = "10.0.0.0/16"
 }
 
 variable "tags" {

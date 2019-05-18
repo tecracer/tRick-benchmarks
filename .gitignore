@@ -13,3 +13,5 @@
 
 # VS Code Configuration
 .vscode
+simple-network/log
+simple-network/pulumi/package-lock.json
