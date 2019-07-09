@@ -1,19 +1,17 @@
-import cdk = require('@aws-cdk/cdk');
-import { VpcNetwork, SubnetType, SecurityGroup, AnyIPv4, TcpPort } from "@aws-cdk/aws-ec2";
+import cdk = require('@aws-cdk/core');
+import { Vpc, SubnetType, SecurityGroup, Peer, Port } from "@aws-cdk/aws-ec2";
 
 export class CdkStack extends cdk.Stack {
-  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+  constructor(app: cdk.App, id: string, props: {}) {
+    super(app, id, props);
 
-    this.templateOptions.description = 'v1.0.0 tRick Benchmark Stack'
-
-    const tRickVPC = new VpcNetwork(this, 'tRick-simple-network-vpc', {
+    const tRickVPC = new Vpc(this, 'tRick-simple-network-vpc', {
       cidr: '10.0.0.0/16',
-      maxAZs: 1,
+      maxAzs: 1,
       subnetConfiguration: [
         {
           name: 'Public',
-          subnetType: SubnetType.Public,
+          subnetType: SubnetType.PUBLIC,
           cidrMask: 24
         }]
     });
@@ -21,10 +19,10 @@ export class CdkStack extends cdk.Stack {
     const tRickWebServerSG = new SecurityGroup(this, 'tRick-simple-network-sg', {
       allowAllOutbound: true,
       description: 'Security Group for HTTP Webserver',
-      groupName: 'webserver-sg',
+      securityGroupName:'webserver-sg',
       vpc: tRickVPC
     });
 
-    tRickWebServerSG.addIngressRule(new AnyIPv4, new TcpPort(80), 'Allow HTTP Access from the world')
+    tRickWebServerSG.addIngressRule(Peer.anyIpv4(), Port.tcp(80), 'Allow HTTP Access from the world')
   }
 }
