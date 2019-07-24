@@ -9,21 +9,21 @@ install: ## First time init
 	npm -g install aws-cdk
 	cdk bootstrap
 
-init:
+init: ## Install npm deps
 	npm i
 
 pre_build: ## Run build
 	npm run build
 
-build: ## 
+build: ## Build Cloudformation
 	cdk synth
 
-post_build:
+post_build: ## Show diff
 	cdk diff
 
-deploy:
+deploy: ## Deploy
 	cdk deploy --require-approval never
 
-remove:
+remove: ## Remove/destroy (without asking!)
 	cdk destroy --force
 	
