@@ -1,0 +1,81 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  s3-lambda-dynamo
+
+  Sample SAM Template for s3-lambda-dynamo
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+
+  MyDynamoTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: my-dynamo-table
+      PrimaryKey:
+        Name: objectId
+        Type: String
+      Tags:
+        AppType: ServerlessStandard
+      SSESpecification:
+        SSEEnabled: true
+
+  MyLambdaIamRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          -
+            Effect: Allow 
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Description: Lambda Execution Role
+      Policies:
+        -
+          PolicyName: LambdaExecutionPermissions
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: '*'
+              - Effect: Allow
+                Action:
+                  - dynamodb:PutItem
+                Resource: !GetAtt MyDynamoTable.Arn
+
+  S3DynamoMagicFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: s3_dynamo_magic/
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Role: !GetAtt MyLambdaIamRole.Arn
+      Events:
+        S3Events:
+          Type: S3 # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Bucket: !Ref MyS3Bucket
+            Events: s3:ObjectCreated:*
+      Environment:
+        Variables:
+          TABLE: !Ref MyDynamoTable
+
+Outputs:
+  S3DynamoMagicFunction:
+    Description: "S3 Dynamo Magic Lambda Function ARN"
+    Value: !GetAtt S3DynamoMagicFunction.Arn
+  S3DynamoMagicFunctionIamRole:
+    Description: "Explicit IAM Role created for S3 Magic Dynamo function"
+    Value: !GetAtt MyLambdaIamRole.Arn

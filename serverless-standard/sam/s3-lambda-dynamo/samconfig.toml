@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "s3-lambda-dynamo"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-do77yxcwkoqw"
+s3_prefix = "s3-lambda-dynamo"
+region = "eu-south-1"
+profile = "letsbuild-devopsnerd"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+
