@@ -16,3 +16,4 @@
 .devcontainer
 simple-network/log
 simple-network/pulumi/package-lock.json
+serverless-standard/cdk-lamba/dist
