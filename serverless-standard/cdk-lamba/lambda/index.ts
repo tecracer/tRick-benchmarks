@@ -29,7 +29,7 @@ export const lambdaHandler = async (event: any, context: any) =>
           "time" : {"N": now.toString()}
         }, 
       TableName: table,
-  }
+    }
     await dynamodb.putItem(params).promise();
 
     let msg= "Key:"+srcKey;
