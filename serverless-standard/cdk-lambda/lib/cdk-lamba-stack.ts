@@ -59,12 +59,12 @@ export class CdkLambdaStack extends Stack {
     // Event End   *******************
 
     //** Dynamodb start */
-    const table = new Table(this, 'items', {
+    const table = new Table(this, 'items-ts', {
       partitionKey: {
         name: 'itemId',
         type: AttributeType.STRING
       },
-      tableName: 'items',
+      tableName: 'items-ts',
       removalPolicy: RemovalPolicy.DESTROY, // NOT recommended for production code
     });
 
