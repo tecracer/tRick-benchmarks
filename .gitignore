@@ -17,3 +17,6 @@
 simple-network/log
 simple-network/pulumi/package-lock.json
 serverless-standard/cdk-lamba/dist
+serverless-standard/cdk-lambda-go/cdk.out
+serverless-standard/cdk-lambda-go/lambda/dist/main
+serverless-standard/cdk-lambda-go/lambda/dist/main.zip

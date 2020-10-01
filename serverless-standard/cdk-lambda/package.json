@@ -1,0 +1,31 @@
+{
+  "name": "cdk-lamba",
+  "version": "0.1.0",
+  "bin": {
+    "cdk-lamba": "bin/cdk-lamba.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.65.0",
+    "@types/jest": "^26.0.14",
+    "@types/node": "14.11.2",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.4.1",
+    "aws-cdk": "1.65.0",
+    "ts-node": "^9.0.0",
+    "typescript": "~4.0.3"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-dynamodb": "^1.65.0",
+    "@aws-cdk/aws-lambda-event-sources": "^1.65.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.65.0",
+    "@aws-cdk/aws-s3": "^1.65.0",
+    "@aws-cdk/core": "1.65.0",
+    "source-map-support": "^0.5.19"
+  }
+}
