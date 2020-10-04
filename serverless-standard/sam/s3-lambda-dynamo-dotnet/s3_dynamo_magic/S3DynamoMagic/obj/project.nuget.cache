@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "dgSpecHash": "vaEv35fsBEo7ly2PZPz9lzv+sLduOGy4KwKWdV7rk9qaJioryH5/5HQ8lkKZ2S/lURmTyg6Yd1BGMASkFEKMBg==",
+  "success": true,
+  "projectFilePath": "/Users/mtesch/Documents/Intern/tRick-benchmarks/serverless-standard/sam/s3-lambda-dynamo-dotnet/s3_dynamo_magic/S3DynamoMagic/S3DynamoMagic.csproj",
+  "expectedPackageFiles": [
+    "/Users/mtesch/.nuget/packages/amazon.lambda.core/1.1.0/amazon.lambda.core.1.1.0.nupkg.sha512",
+    "/Users/mtesch/.nuget/packages/amazon.lambda.s3events/1.1.0/amazon.lambda.s3events.1.1.0.nupkg.sha512",
+    "/Users/mtesch/.nuget/packages/amazon.lambda.serialization.json/1.5.0/amazon.lambda.serialization.json.1.5.0.nupkg.sha512",
+    "/Users/mtesch/.nuget/packages/awssdk.core/3.5.1.22/awssdk.core.3.5.1.22.nupkg.sha512",
+    "/Users/mtesch/.nuget/packages/awssdk.dynamodbv2/3.5.0.24/awssdk.dynamodbv2.3.5.0.24.nupkg.sha512",
+    "/Users/mtesch/.nuget/packages/awssdk.s3/3.3.31.15/awssdk.s3.3.3.31.15.nupkg.sha512",
+    "/Users/mtesch/.nuget/packages/newtonsoft.json/12.0.1/newtonsoft.json.12.0.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Erkannte Paketversion außerhalb der Abhängigkeitseinschränkung: \"AWSSDK.S3 3.3.31.15\" erfordert AWSSDK.Core (>= 3.3.31.7 && < 3.4.0), aber es wurde Version AWSSDK.Core 3.5.1.22 aufgelöst.",
+      "libraryId": "AWSSDK.Core",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/linux-x64"
+      ]
+    }
+  ]
+}

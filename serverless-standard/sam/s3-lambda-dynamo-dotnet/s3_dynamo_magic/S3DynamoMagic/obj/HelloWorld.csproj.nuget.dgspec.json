@@ -1,0 +1,84 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/mtesch/Documents/Intern/my-sam-app/sam-dotnet-app/src/HelloWorld/HelloWorld.csproj": {}
+  },
+  "projects": {
+    "/Users/mtesch/Documents/Intern/my-sam-app/sam-dotnet-app/src/HelloWorld/HelloWorld.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mtesch/Documents/Intern/my-sam-app/sam-dotnet-app/src/HelloWorld/HelloWorld.csproj",
+        "projectName": "HelloWorld",
+        "projectPath": "/Users/mtesch/Documents/Intern/my-sam-app/sam-dotnet-app/src/HelloWorld/HelloWorld.csproj",
+        "packagesPath": "/Users/mtesch/.nuget/packages/",
+        "outputPath": "/Users/mtesch/Documents/Intern/my-sam-app/sam-dotnet-app/src/HelloWorld/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mtesch/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AWSSDK.Core": {
+              "target": "Package",
+              "version": "[3.5.1.22, )"
+            },
+            "AWSSDK.DynamoDBv2": {
+              "target": "Package",
+              "version": "[3.5.0.24, )"
+            },
+            "Amazon.Lambda.Core": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Amazon.Lambda.S3Events": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Amazon.Lambda.Serialization.Json": {
+              "target": "Package",
+              "version": "[1.5.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

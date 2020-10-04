@@ -1,0 +1,12 @@
+/Users/mtesch/Documents/Intern/tRick-benchmarks/serverless-standard/sam/s3-lambda-dynamo-dotnet/s3_dynamo_magic/S3DynamoMagic/bin/Release/netcoreapp3.1/linux-x64/S3DynamoMagic.deps.json
+/Users/mtesch/Documents/Intern/tRick-benchmarks/serverless-standard/sam/s3-lambda-dynamo-dotnet/s3_dynamo_magic/S3DynamoMagic/bin/Release/netcoreapp3.1/linux-x64/S3DynamoMagic.runtimeconfig.json
+/Users/mtesch/Documents/Intern/tRick-benchmarks/serverless-standard/sam/s3-lambda-dynamo-dotnet/s3_dynamo_magic/S3DynamoMagic/bin/Release/netcoreapp3.1/linux-x64/S3DynamoMagic.runtimeconfig.dev.json
+/Users/mtesch/Documents/Intern/tRick-benchmarks/serverless-standard/sam/s3-lambda-dynamo-dotnet/s3_dynamo_magic/S3DynamoMagic/bin/Release/netcoreapp3.1/linux-x64/S3DynamoMagic.dll
+/Users/mtesch/Documents/Intern/tRick-benchmarks/serverless-standard/sam/s3-lambda-dynamo-dotnet/s3_dynamo_magic/S3DynamoMagic/bin/Release/netcoreapp3.1/linux-x64/S3DynamoMagic.pdb
+/Users/mtesch/Documents/Intern/tRick-benchmarks/serverless-standard/sam/s3-lambda-dynamo-dotnet/s3_dynamo_magic/S3DynamoMagic/obj/Release/netcoreapp3.1/linux-x64/S3DynamoMagic.csprojAssemblyReference.cache
+/Users/mtesch/Documents/Intern/tRick-benchmarks/serverless-standard/sam/s3-lambda-dynamo-dotnet/s3_dynamo_magic/S3DynamoMagic/obj/Release/netcoreapp3.1/linux-x64/S3DynamoMagic.AssemblyInfoInputs.cache
+/Users/mtesch/Documents/Intern/tRick-benchmarks/serverless-standard/sam/s3-lambda-dynamo-dotnet/s3_dynamo_magic/S3DynamoMagic/obj/Release/netcoreapp3.1/linux-x64/S3DynamoMagic.AssemblyInfo.cs
+/Users/mtesch/Documents/Intern/tRick-benchmarks/serverless-standard/sam/s3-lambda-dynamo-dotnet/s3_dynamo_magic/S3DynamoMagic/obj/Release/netcoreapp3.1/linux-x64/S3DynamoMagic.csproj.CoreCompileInputs.cache
+/Users/mtesch/Documents/Intern/tRick-benchmarks/serverless-standard/sam/s3-lambda-dynamo-dotnet/s3_dynamo_magic/S3DynamoMagic/obj/Release/netcoreapp3.1/linux-x64/S3DynamoMagic.dll
+/Users/mtesch/Documents/Intern/tRick-benchmarks/serverless-standard/sam/s3-lambda-dynamo-dotnet/s3_dynamo_magic/S3DynamoMagic/obj/Release/netcoreapp3.1/linux-x64/S3DynamoMagic.pdb
+/Users/mtesch/Documents/Intern/tRick-benchmarks/serverless-standard/sam/s3-lambda-dynamo-dotnet/s3_dynamo_magic/S3DynamoMagic/obj/Release/netcoreapp3.1/linux-x64/S3DynamoMagic.genruntimeconfig.cache
