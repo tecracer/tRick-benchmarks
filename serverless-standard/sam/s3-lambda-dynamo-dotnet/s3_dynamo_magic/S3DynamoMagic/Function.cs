@@ -28,16 +28,19 @@ namespace S3DynamoMagic
     private async Task<PutItemResponse> putDynamoItem(TableEnvironment tableEnvironment, string itemKey)
     {
       var dynamoClient = new AmazonDynamoDBClient();
-      var response = await dynamoClient.PutItemAsync(
-          tableName: tableEnvironment.Table,
-          item: new Dictionary<string, AttributeValue>
+      var putItemRequest = new PutItemRequest
+      {
+        TableName = tableEnvironment.Table,
+        Item = new Dictionary<string, AttributeValue>
           {
               {
                   "objectId",
                   new AttributeValue(s: itemKey)
               }
-          }
-      );
+          },
+        ReturnConsumedCapacity = new ReturnConsumedCapacity("TOTAL")
+      };
+      var response = await dynamoClient.PutItemAsync(putItemRequest);
 
       return response;
     }
@@ -47,12 +50,13 @@ namespace S3DynamoMagic
 
       var environment = getEnvironment();
 
-      s3Event.Records.ForEach(record =>
+      foreach (var record in s3Event.Records)
       {
         var itemKey = record.S3.Object.Key;
-        var dynamoRepsonse = putDynamoItem(environment, itemKey);
-        System.Console.WriteLine(dynamoRepsonse);
-      });
+        var dynamoResponse = await putDynamoItem(environment, itemKey);
+
+        System.Console.WriteLine($"ConsumedCapacity: {dynamoResponse.ConsumedCapacity.CapacityUnits}");
+      };
 
       return true;
     }
