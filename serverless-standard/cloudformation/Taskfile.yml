@@ -1,0 +1,58 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  STACK: trick-cloudformation
+  TEMPLATE: lambdago.yaml
+env:
+  AWS_PAGER: ""  
+
+tasks:
+  deploy-module-lambda:
+    desc: Deploy cfn module lambda
+    dir: golambda-module
+    cmds:
+      - cfn submit -v
+    silent: true
+
+  deploy-module-table:
+    desc: Deploy cfn module dynamodb
+    dir: table-module
+    cmds:
+      - cfn submit -v
+    silent: true
+
+  deploy-module-policy:
+    desc: Deploy cfn module dynamodb
+    dir: table-policy
+    cmds:
+      - cfn submit -v
+    silent: true
+
+  create-stack:
+    desc: First time stack deploye
+    cmds: 
+      - aws cloudformation create-stack --stack-name {{.STACK}}  --template-body file://{{.TEMPLATE}} --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM  --parameters file://parms.json
+      - cfn-tail trick-cloudformation
+
+  update-stack:
+    desc: First time stack deploye
+    cmds: 
+      - aws cloudformation update-stack --stack-name {{.STACK}}  --template-body file://{{.TEMPLATE}} --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM  --parameters file://parms.json
+      - cfn-tail trick-cloudformation
+
+  delete-stack:
+    desc: First time stack deploye
+    cmds: 
+      - aws cloudformation delete-stack --stack-name {{.STACK}} 
+      - cfn-tail trick-cloudformation
+
+  cycle:
+    desc: Reset and redeploy all
+    cmds: 
+      - task: deploy-module-lambda
+      - task: deploy-module-table
+      - task: deploy-module-policy
+      - task: delete-stack
+      - task: create-stack

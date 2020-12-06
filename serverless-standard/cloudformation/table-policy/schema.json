@@ -1,0 +1,62 @@
+{
+    "typeName": "tecracer::IAM::tablepolicy::MODULE",
+    "description": "Schema for Module Fragment of type tecracer::IAM::tablepolicy::MODULE",
+    "properties": {
+        "Parameters": {
+            "type": "object",
+            "properties": {
+                "tableParm": {
+                    "type": "object",
+                    "properties": {
+                        "Type": {
+                            "type": "string"
+                        },
+                        "Description": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "Type",
+                        "Description"
+                    ],
+                    "description": "table arn"
+                },
+                "functionrole": {
+                    "type": "object",
+                    "properties": {
+                        "Type": {
+                            "type": "string"
+                        },
+                        "Description": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "Type",
+                        "Description"
+                    ],
+                    "description": "policy of lambda function"
+                }
+            }
+        },
+        "Resources": {
+            "properties": {
+                "LambdaDynamodb": {
+                    "type": "object",
+                    "properties": {
+                        "Type": {
+                            "type": "string",
+                            "const": "AWS::IAM::Policy"
+                        },
+                        "Properties": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": true
+}

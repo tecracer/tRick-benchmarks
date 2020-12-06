@@ -36,6 +36,8 @@ def lambda_handler(event, context):
 
     logger.info(f'Environment: {environment}')
 
+    
+
     for record in event['Records']:
         itemKey = record['s3']['object']['key']
         response = putDynamoItem(environment['Table'], itemKey)

@@ -1,0 +1,10 @@
+[
+  {
+    "ParameterKey": "Bucket",
+    "ParameterValue": "cdktoolkit-stagingbucket-vvch7n3y2xqp"
+  }, 
+  {
+    "ParameterKey": "Key",
+    "ParameterValue": "lambda-latest.zip"
+  }
+]

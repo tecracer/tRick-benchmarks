@@ -1,0 +1,28 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  install:
+    desc: install cdk
+    cmds:
+      - npm i cdk -g
+
+  build:
+    desc: build cdk
+    cmds:
+      - yarn
+      - yarn run build
+
+  deploy:
+    desc: deploy app
+    cmds:
+      - cdk deploy
+
+  destroy:
+    desc: destroy app
+    cmds:
+      - cdk destroy

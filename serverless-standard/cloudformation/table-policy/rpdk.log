@@ -1,0 +1,102 @@
+[2020-12-06T15:43:38Z] DEBUG    - Logging set up successfully
+[2020-12-06T15:43:38Z] DEBUG    - Running None: Namespace(artifact_type=None, command=<function init at 0x11de8f0d0>, force=False, subparser_name=None, type_name=None, verbose=0, version=False)
+[2020-12-06T15:43:38Z] DEBUG    - Root directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy
+[2020-12-06T15:43:38Z] WARNING  - Initializing new project
+[2020-12-06T15:43:38Z] DEBUG    - Loading project file '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/.rpdk-config'
+[2020-12-06T15:44:22Z] DEBUG    - Resource type identifier: tecracer::IAM::tablepolicy::MODULE
+[2020-12-06T15:44:22Z] DEBUG    - Overwriting '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/.rpdk-config'
+[2020-12-06T15:44:22Z] DEBUG    - Fragment directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/fragments
+[2020-12-06T15:44:22Z] DEBUG    - Overwriting '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/fragments/sample.json'
+[2020-12-06T15:44:22Z] WARNING  - Initialized a new project in /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy
+[2020-12-06T15:44:22Z] DEBUG    - Finished None
+[2020-12-06T15:51:18Z] DEBUG    - Logging set up successfully
+[2020-12-06T15:51:18Z] DEBUG    - Running None: Namespace(artifact_type=None, command=<function init at 0x121f350d0>, force=False, subparser_name=None, type_name=None, verbose=0, version=False)
+[2020-12-06T15:51:18Z] DEBUG    - Root directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy
+[2020-12-06T15:51:18Z] WARNING  - Initializing new project
+[2020-12-06T15:51:18Z] DEBUG    - Loading project file '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/.rpdk-config'
+[2020-12-06T15:51:18Z] DEBUG    - Settings file for 'tecracer::IAM::tablepolicy::MODULE' already exists: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/.rpdk-config
+[2020-12-06T15:51:23Z] DEBUG    - Overwrite response: False
+[2020-12-06T15:52:03Z] DEBUG    - Logging set up successfully
+[2020-12-06T15:52:03Z] DEBUG    - Running submit: Namespace(command=<function submit at 0x1127c0a60>, dry_run=False, endpoint_url=None, region=None, role_arn=None, set_default=False, subparser_name='submit', use_role=True, verbose=1, version=False)
+[2020-12-06T15:52:03Z] DEBUG    - Root directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy
+[2020-12-06T15:52:03Z] DEBUG    - Loading project file '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/.rpdk-config'
+[2020-12-06T15:52:03Z] INFO     - Validating your module fragments...
+[2020-12-06T15:52:03Z] DEBUG    - Fragment directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/fragments
+[2020-12-06T15:52:03Z] DEBUG    - Overwriting '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/schema.json'
+[2020-12-06T15:52:03Z] DEBUG    - overrides.json not found. Not writing to package.
+[2020-12-06T15:52:03Z] DEBUG    - Packaging complete, uploading...
+[2020-12-06T15:52:03Z] DEBUG    - Uploading to region 'eu-central-1'
+[2020-12-06T15:52:03Z] INFO     - Creating CloudFormationManagedUploadInfrastructure
+[2020-12-06T15:52:04Z] INFO     - CloudFormationManagedUploadInfrastructure already exists. Attempting to update
+[2020-12-06T15:52:04Z] INFO     - CloudFormationManagedUploadInfrastructure stack is up to date
+[2020-12-06T15:52:04Z] DEBUG    - Uploading to 'cloudformationmanageduploadinfrast-artifactbucket-sz1g4cfnv7t0/tecracer-iam-tablepolicy-module-2020-12-06T15-52-04.zip'...
+[2020-12-06T15:52:04Z] DEBUG    - Upload complete
+[2020-12-06T15:52:04Z] DEBUG    - Got S3 URL: s3://cloudformationmanageduploadinfrast-artifactbucket-sz1g4cfnv7t0/tecracer-iam-tablepolicy-module-2020-12-06T15-52-04.zip
+[2020-12-06T15:52:04Z] DEBUG    - Got Log Role: arn:aws:iam::795048271754:role/CloudFormationManagedUplo-LogAndMetricsDeliveryRol-QAFRJPHRFVVQ
+[2020-12-06T15:52:05Z] WARNING  - Successfully submitted type. Waiting for registration with token 'f13c4e4b-e124-4940-b302-ac1681076011' to complete.
+[2020-12-06T15:52:35Z] WARNING  - Registration complete.
+[2020-12-06T15:52:35Z] WARNING  - {'ProgressStatus': 'COMPLETE', 'Description': 'Deployment is currently in DEPLOY_STAGE of status COMPLETED; ', 'TypeArn': 'arn:aws:cloudformation:eu-central-1:795048271754:type/module/tecracer-IAM-tablepolicy-MODULE', 'TypeVersionArn': 'arn:aws:cloudformation:eu-central-1:795048271754:type/module/tecracer-IAM-tablepolicy-MODULE/00000001', 'ResponseMetadata': {'RequestId': 'f3fe0864-9957-43b6-bd13-b4bda033a835', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': 'f3fe0864-9957-43b6-bd13-b4bda033a835', 'content-type': 'text/xml', 'content-length': '703', 'date': 'Sun, 06 Dec 2020 15:52:34 GMT'}, 'RetryAttempts': 0}}
+[2020-12-06T15:52:35Z] DEBUG    - Finished submit
+[2020-12-06T16:21:30Z] DEBUG    - Logging set up successfully
+[2020-12-06T16:21:30Z] DEBUG    - Running submit: Namespace(command=<function submit at 0x11c511a60>, dry_run=False, endpoint_url=None, region=None, role_arn=None, set_default=False, subparser_name='submit', use_role=True, verbose=1, version=False)
+[2020-12-06T16:21:30Z] DEBUG    - Root directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy
+[2020-12-06T16:21:30Z] DEBUG    - Loading project file '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/.rpdk-config'
+[2020-12-06T16:21:30Z] INFO     - Validating your module fragments...
+[2020-12-06T16:21:30Z] DEBUG    - Fragment directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/fragments
+[2020-12-06T16:21:30Z] DEBUG    - Overwriting '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/schema.json'
+[2020-12-06T16:21:30Z] DEBUG    - overrides.json not found. Not writing to package.
+[2020-12-06T16:21:30Z] DEBUG    - Packaging complete, uploading...
+[2020-12-06T16:21:30Z] DEBUG    - Uploading to region 'eu-central-1'
+[2020-12-06T16:21:30Z] INFO     - Creating CloudFormationManagedUploadInfrastructure
+[2020-12-06T16:21:30Z] INFO     - CloudFormationManagedUploadInfrastructure already exists. Attempting to update
+[2020-12-06T16:21:31Z] INFO     - CloudFormationManagedUploadInfrastructure stack is up to date
+[2020-12-06T16:21:31Z] DEBUG    - Uploading to 'cloudformationmanageduploadinfrast-artifactbucket-sz1g4cfnv7t0/tecracer-iam-tablepolicy-module-2020-12-06T16-21-31.zip'...
+[2020-12-06T16:21:31Z] DEBUG    - Upload complete
+[2020-12-06T16:21:31Z] DEBUG    - Got S3 URL: s3://cloudformationmanageduploadinfrast-artifactbucket-sz1g4cfnv7t0/tecracer-iam-tablepolicy-module-2020-12-06T16-21-31.zip
+[2020-12-06T16:21:31Z] DEBUG    - Got Log Role: arn:aws:iam::795048271754:role/CloudFormationManagedUplo-LogAndMetricsDeliveryRol-QAFRJPHRFVVQ
+[2020-12-06T16:21:31Z] WARNING  - Successfully submitted type. Waiting for registration with token 'c3c192cd-a36c-4aef-9be6-56c958bbe6f7' to complete.
+[2020-12-06T16:22:02Z] WARNING  - Registration complete.
+[2020-12-06T16:22:02Z] WARNING  - {'ProgressStatus': 'COMPLETE', 'Description': 'Deployment is currently in DEPLOY_STAGE of status COMPLETED; ', 'TypeArn': 'arn:aws:cloudformation:eu-central-1:795048271754:type/module/tecracer-IAM-tablepolicy-MODULE', 'TypeVersionArn': 'arn:aws:cloudformation:eu-central-1:795048271754:type/module/tecracer-IAM-tablepolicy-MODULE/00000002', 'ResponseMetadata': {'RequestId': '59dbf818-6f65-41d6-a49a-3054de1884a6', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': '59dbf818-6f65-41d6-a49a-3054de1884a6', 'content-type': 'text/xml', 'content-length': '703', 'date': 'Sun, 06 Dec 2020 16:22:02 GMT'}, 'RetryAttempts': 0}}
+[2020-12-06T16:22:02Z] DEBUG    - Finished submit
+[2020-12-06T16:24:06Z] DEBUG    - Logging set up successfully
+[2020-12-06T16:24:06Z] DEBUG    - Running submit: Namespace(command=<function submit at 0x11e030a60>, dry_run=False, endpoint_url=None, region=None, role_arn=None, set_default=False, subparser_name='submit', use_role=True, verbose=1, version=False)
+[2020-12-06T16:24:06Z] DEBUG    - Root directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy
+[2020-12-06T16:24:06Z] DEBUG    - Loading project file '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/.rpdk-config'
+[2020-12-06T16:24:06Z] INFO     - Validating your module fragments...
+[2020-12-06T16:24:06Z] DEBUG    - Fragment directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/fragments
+[2020-12-06T16:24:06Z] DEBUG    - Overwriting '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/schema.json'
+[2020-12-06T16:24:06Z] DEBUG    - overrides.json not found. Not writing to package.
+[2020-12-06T16:24:06Z] DEBUG    - Packaging complete, uploading...
+[2020-12-06T16:24:06Z] DEBUG    - Uploading to region 'eu-central-1'
+[2020-12-06T16:24:06Z] INFO     - Creating CloudFormationManagedUploadInfrastructure
+[2020-12-06T16:24:06Z] INFO     - CloudFormationManagedUploadInfrastructure already exists. Attempting to update
+[2020-12-06T16:24:07Z] INFO     - CloudFormationManagedUploadInfrastructure stack is up to date
+[2020-12-06T16:24:07Z] DEBUG    - Uploading to 'cloudformationmanageduploadinfrast-artifactbucket-sz1g4cfnv7t0/tecracer-iam-tablepolicy-module-2020-12-06T16-24-07.zip'...
+[2020-12-06T16:24:07Z] DEBUG    - Upload complete
+[2020-12-06T16:24:07Z] DEBUG    - Got S3 URL: s3://cloudformationmanageduploadinfrast-artifactbucket-sz1g4cfnv7t0/tecracer-iam-tablepolicy-module-2020-12-06T16-24-07.zip
+[2020-12-06T16:24:07Z] DEBUG    - Got Log Role: arn:aws:iam::795048271754:role/CloudFormationManagedUplo-LogAndMetricsDeliveryRol-QAFRJPHRFVVQ
+[2020-12-06T16:24:07Z] WARNING  - Successfully submitted type. Waiting for registration with token '07b3bdbe-32bb-4ed2-9211-ff69d0e62786' to complete.
+[2020-12-06T16:24:37Z] WARNING  - Registration complete.
+[2020-12-06T16:24:37Z] WARNING  - {'ProgressStatus': 'COMPLETE', 'Description': 'Deployment is currently in DEPLOY_STAGE of status COMPLETED; ', 'TypeArn': 'arn:aws:cloudformation:eu-central-1:795048271754:type/module/tecracer-IAM-tablepolicy-MODULE', 'TypeVersionArn': 'arn:aws:cloudformation:eu-central-1:795048271754:type/module/tecracer-IAM-tablepolicy-MODULE/00000003', 'ResponseMetadata': {'RequestId': 'dd7c9d53-3b4f-4145-bd9b-e6882bf0047e', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': 'dd7c9d53-3b4f-4145-bd9b-e6882bf0047e', 'content-type': 'text/xml', 'content-length': '703', 'date': 'Sun, 06 Dec 2020 16:24:37 GMT'}, 'RetryAttempts': 0}}
+[2020-12-06T16:24:37Z] DEBUG    - Finished submit
+[2020-12-06T16:28:52Z] DEBUG    - Logging set up successfully
+[2020-12-06T16:28:52Z] DEBUG    - Running submit: Namespace(command=<function submit at 0x118b2aa60>, dry_run=False, endpoint_url=None, region=None, role_arn=None, set_default=False, subparser_name='submit', use_role=True, verbose=1, version=False)
+[2020-12-06T16:28:52Z] DEBUG    - Root directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy
+[2020-12-06T16:28:52Z] DEBUG    - Loading project file '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/.rpdk-config'
+[2020-12-06T16:28:52Z] INFO     - Validating your module fragments...
+[2020-12-06T16:28:52Z] DEBUG    - Fragment directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/fragments
+[2020-12-06T16:28:52Z] DEBUG    - Overwriting '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-policy/schema.json'
+[2020-12-06T16:28:52Z] DEBUG    - overrides.json not found. Not writing to package.
+[2020-12-06T16:28:52Z] DEBUG    - Packaging complete, uploading...
+[2020-12-06T16:28:52Z] DEBUG    - Uploading to region 'eu-central-1'
+[2020-12-06T16:28:52Z] INFO     - Creating CloudFormationManagedUploadInfrastructure
+[2020-12-06T16:28:53Z] INFO     - CloudFormationManagedUploadInfrastructure already exists. Attempting to update
+[2020-12-06T16:28:53Z] INFO     - CloudFormationManagedUploadInfrastructure stack is up to date
+[2020-12-06T16:28:53Z] DEBUG    - Uploading to 'cloudformationmanageduploadinfrast-artifactbucket-sz1g4cfnv7t0/tecracer-iam-tablepolicy-module-2020-12-06T16-28-53.zip'...
+[2020-12-06T16:28:53Z] DEBUG    - Upload complete
+[2020-12-06T16:28:53Z] DEBUG    - Got S3 URL: s3://cloudformationmanageduploadinfrast-artifactbucket-sz1g4cfnv7t0/tecracer-iam-tablepolicy-module-2020-12-06T16-28-53.zip
+[2020-12-06T16:28:53Z] DEBUG    - Got Log Role: arn:aws:iam::795048271754:role/CloudFormationManagedUplo-LogAndMetricsDeliveryRol-QAFRJPHRFVVQ
+[2020-12-06T16:28:54Z] WARNING  - Successfully submitted type. Waiting for registration with token '41d8b0b1-c8de-43bb-bd76-d8f30fba222a' to complete.
+[2020-12-06T16:29:24Z] WARNING  - Registration complete.
+[2020-12-06T16:29:24Z] WARNING  - {'ProgressStatus': 'COMPLETE', 'Description': 'Deployment is currently in DEPLOY_STAGE of status COMPLETED; ', 'TypeArn': 'arn:aws:cloudformation:eu-central-1:795048271754:type/module/tecracer-IAM-tablepolicy-MODULE', 'TypeVersionArn': 'arn:aws:cloudformation:eu-central-1:795048271754:type/module/tecracer-IAM-tablepolicy-MODULE/00000004', 'ResponseMetadata': {'RequestId': '7102d1e3-39b2-4004-8cc1-326a2cd8fde2', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': '7102d1e3-39b2-4004-8cc1-326a2cd8fde2', 'content-type': 'text/xml', 'content-length': '703', 'date': 'Sun, 06 Dec 2020 16:29:23 GMT'}, 'RetryAttempts': 0}}
+[2020-12-06T16:29:24Z] DEBUG    - Finished submit

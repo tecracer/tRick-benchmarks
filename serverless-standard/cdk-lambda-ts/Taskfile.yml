@@ -1,0 +1,57 @@
+# https://taskfile.dev
+
+version: '2'
+
+vars:
+  GREETING: Hello, World!  
+  zip: ../dist/hello.zip
+  lambda: CdkLambaStack-fn5FF616E3-1HELHLDT9SNKN
+  bucket: cdklambastack-incoming0b397865-f93l00jznkqa
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  build: 
+    cmds:
+      - npm run build
+
+  build-lambda: 
+    dir: lambda
+    cmds:
+      - npm i 
+      - npm run build
+
+  diff:
+    deps: [build,build-lambda]
+    desc: Diff stack
+    cmds:
+      - cdk diff
+
+  deploy:
+    desc: Deploy without asking
+    deps: [build, build-lambda]
+    cmds: 
+      - cdk deploy --require-approval never
+
+  destroy:
+    desc: destroy stack
+    cmds:
+      - cdk destroy
+  
+  copy-file:
+    desc: Copy readme t s3
+    cmds:
+        - aws s3 cp README.md s3://{{.bucket}}
+
+  deploy-code:
+    desc: Only Update Lambda code
+    dir: lambda
+    deps: [build-lambda]
+
+    cmds:
+      - npm prune --production
+      - zip -r -dd -q {{.zip}} .
+      - aws lambda update-function-code --function-name  {{.lambda}} --zip-file fileb://{{.zip}}

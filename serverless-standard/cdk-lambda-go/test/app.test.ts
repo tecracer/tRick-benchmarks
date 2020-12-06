@@ -1,11 +1,11 @@
-import '@aws-cdk/assert/jest';
+import { expect as expectCDK, haveResource } from '@aws-cdk/assert';
 import { App } from '@aws-cdk/core';
-import { MyStack } from '../src/main';
+import { CdkLambdaGoStack } from '../src/lib/cdk-lambda-go-stack';
 
 test('Snapshot', () => {
   const app = new App();
-  const stack = new MyStack(app, 'test');
-
-  expect(stack).not.toHaveResource('AWS::S3::Bucket');
-  expect(app.synth().getStackArtifact(stack.artifactId).template).toMatchSnapshot();
+  const stack = new CdkLambdaGoStack(app, 'test');
+  expectCDK(stack).to(haveResource('AWS::S3::Bucket'));
+  expectCDK(stack).to(haveResource('AWS::Lambda::Function'));
+  expectCDK(stack).to(haveResource('AWS::DynamoDB::Table'));
 });

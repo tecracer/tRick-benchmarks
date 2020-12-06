@@ -1,0 +1,160 @@
+[2020-12-06T15:31:12Z] DEBUG    - Logging set up successfully
+[2020-12-06T15:31:12Z] DEBUG    - Running submit: Namespace(command=<function submit at 0x123c7fa60>, dry_run=False, endpoint_url=None, region=None, role_arn=None, set_default=False, subparser_name='submit', use_role=True, verbose=1, version=False)
+[2020-12-06T15:31:12Z] DEBUG    - Root directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module
+[2020-12-06T15:31:12Z] DEBUG    - Loading project file '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/.rpdk-config'
+[2020-12-06T15:31:12Z] DEBUG    - Project file not found. Have you run 'init'?
+Traceback (most recent call last):
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/project.py", line 411, in load
+    self.load_settings()
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/project.py", line 188, in load_settings
+    with self.settings_path.open("r", encoding="utf-8") as f:
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/pathlib.py", line 1200, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/pathlib.py", line 1054, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/.rpdk-config'
+[2020-12-06T15:31:12Z] DEBUG    - Caught exit recommendation
+Traceback (most recent call last):
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/project.py", line 411, in load
+    self.load_settings()
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/project.py", line 188, in load_settings
+    with self.settings_path.open("r", encoding="utf-8") as f:
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/pathlib.py", line 1200, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/pathlib.py", line 1054, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/.rpdk-config'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/cli.py", line 100, in main
+    args.command(args)
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/submit.py", line 14, in submit
+    project.load()
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/project.py", line 413, in load
+    self._raise_invalid_project(
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/project.py", line 183, in _raise_invalid_project
+    raise InvalidProjectError(msg) from e
+rpdk.core.exceptions.InvalidProjectError: Project file not found. Have you run 'init'?
+[2020-12-06T15:31:12Z] CRITICAL - Project file not found. Have you run 'init'?
+[2020-12-06T15:31:23Z] DEBUG    - Logging set up successfully
+[2020-12-06T15:31:23Z] DEBUG    - Running None: Namespace(artifact_type=None, command=<function init at 0x11ed670d0>, force=False, subparser_name=None, type_name=None, verbose=0, version=False)
+[2020-12-06T15:31:23Z] DEBUG    - Root directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module
+[2020-12-06T15:31:23Z] WARNING  - Initializing new project
+[2020-12-06T15:31:23Z] DEBUG    - Loading project file '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/.rpdk-config'
+[2020-12-06T15:31:46Z] DEBUG    - Resource type identifier: tecracer::dynamodb::gotable::MODULE
+[2020-12-06T15:31:46Z] DEBUG    - Overwriting '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/.rpdk-config'
+[2020-12-06T15:31:46Z] DEBUG    - Fragment directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/fragments
+[2020-12-06T15:31:46Z] DEBUG    - Overwriting '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/fragments/sample.json'
+[2020-12-06T15:31:46Z] WARNING  - Initialized a new project in /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module
+[2020-12-06T15:31:46Z] DEBUG    - Finished None
+[2020-12-06T15:31:57Z] DEBUG    - Logging set up successfully
+[2020-12-06T15:31:57Z] DEBUG    - Running submit: Namespace(command=<function submit at 0x1178f5a60>, dry_run=False, endpoint_url=None, region=None, role_arn=None, set_default=False, subparser_name='submit', use_role=True, verbose=1, version=False)
+[2020-12-06T15:31:57Z] DEBUG    - Root directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module
+[2020-12-06T15:31:57Z] DEBUG    - Loading project file '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/.rpdk-config'
+[2020-12-06T15:31:57Z] INFO     - Validating your module fragments...
+[2020-12-06T15:31:57Z] DEBUG    - Fragment directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/fragments
+[2020-12-06T15:31:57Z] DEBUG    - Invalid template fragment: A Module can only consist of a single template file, but there are 2: ['/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/fragments/table.json', '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/fragments/sample.json']
+Traceback (most recent call last):
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/project.py", line 421, in load
+    self._validate_fragments(template_fragment)
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/project.py", line 439, in _validate_fragments
+    template_fragment.validate_fragments()
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/fragment/generator.py", line 71, in validate_fragments
+    raw_fragments = self._read_raw_fragments()
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/fragment/generator.py", line 290, in _read_raw_fragments
+    return self._load_fragment(self._get_fragment_file())
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/fragment/generator.py", line 311, in _get_fragment_file
+    raise FragmentValidationError(
+rpdk.core.exceptions.FragmentValidationError: A Module can only consist of a single template file, but there are 2: ['/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/fragments/table.json', '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/fragments/sample.json']
+[2020-12-06T15:31:57Z] DEBUG    - Caught exit recommendation
+Traceback (most recent call last):
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/project.py", line 421, in load
+    self._validate_fragments(template_fragment)
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/project.py", line 439, in _validate_fragments
+    template_fragment.validate_fragments()
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/fragment/generator.py", line 71, in validate_fragments
+    raw_fragments = self._read_raw_fragments()
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/fragment/generator.py", line 290, in _read_raw_fragments
+    return self._load_fragment(self._get_fragment_file())
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/fragment/generator.py", line 311, in _get_fragment_file
+    raise FragmentValidationError(
+rpdk.core.exceptions.FragmentValidationError: A Module can only consist of a single template file, but there are 2: ['/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/fragments/table.json', '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/fragments/sample.json']
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/cli.py", line 100, in main
+    args.command(args)
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/submit.py", line 14, in submit
+    project.load()
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/project.py", line 424, in load
+    self._raise_invalid_project(msg, e)
+  File "/Users/silberkopf/.pyenv/versions/3.8.0/lib/python3.8/site-packages/rpdk/core/project.py", line 183, in _raise_invalid_project
+    raise InvalidProjectError(msg) from e
+rpdk.core.exceptions.InvalidProjectError: Invalid template fragment: A Module can only consist of a single template file, but there are 2: ['/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/fragments/table.json', '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/fragments/sample.json']
+[2020-12-06T15:31:57Z] CRITICAL - Invalid template fragment: A Module can only consist of a single template file, but there are 2: ['/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/fragments/table.json', '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/fragments/sample.json']
+[2020-12-06T15:32:26Z] DEBUG    - Logging set up successfully
+[2020-12-06T15:32:26Z] DEBUG    - Running submit: Namespace(command=<function submit at 0x10dc9ba60>, dry_run=False, endpoint_url=None, region=None, role_arn=None, set_default=False, subparser_name='submit', use_role=True, verbose=1, version=False)
+[2020-12-06T15:32:26Z] DEBUG    - Root directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module
+[2020-12-06T15:32:26Z] DEBUG    - Loading project file '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/.rpdk-config'
+[2020-12-06T15:32:26Z] INFO     - Validating your module fragments...
+[2020-12-06T15:32:26Z] DEBUG    - Fragment directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/fragments
+[2020-12-06T15:32:26Z] DEBUG    - Overwriting '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/schema.json'
+[2020-12-06T15:32:26Z] DEBUG    - overrides.json not found. Not writing to package.
+[2020-12-06T15:32:26Z] DEBUG    - Packaging complete, uploading...
+[2020-12-06T15:32:27Z] DEBUG    - Uploading to region 'eu-central-1'
+[2020-12-06T15:32:27Z] INFO     - Creating CloudFormationManagedUploadInfrastructure
+[2020-12-06T15:32:27Z] INFO     - CloudFormationManagedUploadInfrastructure already exists. Attempting to update
+[2020-12-06T15:32:27Z] INFO     - CloudFormationManagedUploadInfrastructure stack is up to date
+[2020-12-06T15:32:27Z] DEBUG    - Uploading to 'cloudformationmanageduploadinfrast-artifactbucket-sz1g4cfnv7t0/tecracer-dynamodb-gotable-module-2020-12-06T15-32-27.zip'...
+[2020-12-06T15:32:27Z] DEBUG    - Upload complete
+[2020-12-06T15:32:27Z] DEBUG    - Got S3 URL: s3://cloudformationmanageduploadinfrast-artifactbucket-sz1g4cfnv7t0/tecracer-dynamodb-gotable-module-2020-12-06T15-32-27.zip
+[2020-12-06T15:32:27Z] DEBUG    - Got Log Role: arn:aws:iam::795048271754:role/CloudFormationManagedUplo-LogAndMetricsDeliveryRol-QAFRJPHRFVVQ
+[2020-12-06T15:32:28Z] WARNING  - Successfully submitted type. Waiting for registration with token 'eb0773c5-dc26-48cf-b682-e5f897039e45' to complete.
+[2020-12-06T15:32:58Z] WARNING  - Registration complete.
+[2020-12-06T15:32:58Z] WARNING  - {'ProgressStatus': 'COMPLETE', 'Description': 'Deployment is currently in DEPLOY_STAGE of status COMPLETED; ', 'TypeArn': 'arn:aws:cloudformation:eu-central-1:795048271754:type/module/tecracer-dynamodb-gotable-MODULE', 'TypeVersionArn': 'arn:aws:cloudformation:eu-central-1:795048271754:type/module/tecracer-dynamodb-gotable-MODULE/00000001', 'ResponseMetadata': {'RequestId': 'a4fd5cf5-a40d-4583-9ca2-10c7c632f9aa', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': 'a4fd5cf5-a40d-4583-9ca2-10c7c632f9aa', 'content-type': 'text/xml', 'content-length': '705', 'date': 'Sun, 06 Dec 2020 15:32:57 GMT'}, 'RetryAttempts': 0}}
+[2020-12-06T15:32:58Z] DEBUG    - Finished submit
+[2020-12-06T16:24:39Z] DEBUG    - Logging set up successfully
+[2020-12-06T16:24:39Z] DEBUG    - Running submit: Namespace(command=<function submit at 0x126143a60>, dry_run=False, endpoint_url=None, region=None, role_arn=None, set_default=False, subparser_name='submit', use_role=True, verbose=1, version=False)
+[2020-12-06T16:24:39Z] DEBUG    - Root directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module
+[2020-12-06T16:24:39Z] DEBUG    - Loading project file '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/.rpdk-config'
+[2020-12-06T16:24:39Z] INFO     - Validating your module fragments...
+[2020-12-06T16:24:39Z] DEBUG    - Fragment directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/fragments
+[2020-12-06T16:24:39Z] DEBUG    - Overwriting '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/schema.json'
+[2020-12-06T16:24:39Z] DEBUG    - overrides.json not found. Not writing to package.
+[2020-12-06T16:24:39Z] DEBUG    - Packaging complete, uploading...
+[2020-12-06T16:24:39Z] DEBUG    - Uploading to region 'eu-central-1'
+[2020-12-06T16:24:39Z] INFO     - Creating CloudFormationManagedUploadInfrastructure
+[2020-12-06T16:24:39Z] INFO     - CloudFormationManagedUploadInfrastructure already exists. Attempting to update
+[2020-12-06T16:24:39Z] INFO     - CloudFormationManagedUploadInfrastructure stack is up to date
+[2020-12-06T16:24:39Z] DEBUG    - Uploading to 'cloudformationmanageduploadinfrast-artifactbucket-sz1g4cfnv7t0/tecracer-dynamodb-gotable-module-2020-12-06T16-24-39.zip'...
+[2020-12-06T16:24:39Z] DEBUG    - Upload complete
+[2020-12-06T16:24:39Z] DEBUG    - Got S3 URL: s3://cloudformationmanageduploadinfrast-artifactbucket-sz1g4cfnv7t0/tecracer-dynamodb-gotable-module-2020-12-06T16-24-39.zip
+[2020-12-06T16:24:39Z] DEBUG    - Got Log Role: arn:aws:iam::795048271754:role/CloudFormationManagedUplo-LogAndMetricsDeliveryRol-QAFRJPHRFVVQ
+[2020-12-06T16:24:40Z] WARNING  - Successfully submitted type. Waiting for registration with token '75e27040-3127-4e7f-b112-341326e93acc' to complete.
+[2020-12-06T16:25:10Z] WARNING  - Registration complete.
+[2020-12-06T16:25:10Z] WARNING  - {'ProgressStatus': 'COMPLETE', 'Description': 'Deployment is currently in DEPLOY_STAGE of status COMPLETED; ', 'TypeArn': 'arn:aws:cloudformation:eu-central-1:795048271754:type/module/tecracer-dynamodb-gotable-MODULE', 'TypeVersionArn': 'arn:aws:cloudformation:eu-central-1:795048271754:type/module/tecracer-dynamodb-gotable-MODULE/00000002', 'ResponseMetadata': {'RequestId': 'f23c3061-f362-4a3f-9105-35f6a0d39e0d', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': 'f23c3061-f362-4a3f-9105-35f6a0d39e0d', 'content-type': 'text/xml', 'content-length': '705', 'date': 'Sun, 06 Dec 2020 16:25:09 GMT'}, 'RetryAttempts': 0}}
+[2020-12-06T16:25:10Z] DEBUG    - Finished submit
+[2020-12-06T16:28:20Z] DEBUG    - Logging set up successfully
+[2020-12-06T16:28:20Z] DEBUG    - Running submit: Namespace(command=<function submit at 0x1235e3a60>, dry_run=False, endpoint_url=None, region=None, role_arn=None, set_default=False, subparser_name='submit', use_role=True, verbose=1, version=False)
+[2020-12-06T16:28:20Z] DEBUG    - Root directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module
+[2020-12-06T16:28:20Z] DEBUG    - Loading project file '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/.rpdk-config'
+[2020-12-06T16:28:20Z] INFO     - Validating your module fragments...
+[2020-12-06T16:28:20Z] DEBUG    - Fragment directory: /Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/fragments
+[2020-12-06T16:28:20Z] DEBUG    - Overwriting '/Users/silberkopf/Documents/projects/tecracer-github/tRick-benchmarks/serverless-standard/cloudformation/table-module/schema.json'
+[2020-12-06T16:28:20Z] DEBUG    - overrides.json not found. Not writing to package.
+[2020-12-06T16:28:20Z] DEBUG    - Packaging complete, uploading...
+[2020-12-06T16:28:20Z] DEBUG    - Uploading to region 'eu-central-1'
+[2020-12-06T16:28:20Z] INFO     - Creating CloudFormationManagedUploadInfrastructure
+[2020-12-06T16:28:20Z] INFO     - CloudFormationManagedUploadInfrastructure already exists. Attempting to update
+[2020-12-06T16:28:21Z] INFO     - CloudFormationManagedUploadInfrastructure stack is up to date
+[2020-12-06T16:28:21Z] DEBUG    - Uploading to 'cloudformationmanageduploadinfrast-artifactbucket-sz1g4cfnv7t0/tecracer-dynamodb-gotable-module-2020-12-06T16-28-21.zip'...
+[2020-12-06T16:28:21Z] DEBUG    - Upload complete
+[2020-12-06T16:28:21Z] DEBUG    - Got S3 URL: s3://cloudformationmanageduploadinfrast-artifactbucket-sz1g4cfnv7t0/tecracer-dynamodb-gotable-module-2020-12-06T16-28-21.zip
+[2020-12-06T16:28:21Z] DEBUG    - Got Log Role: arn:aws:iam::795048271754:role/CloudFormationManagedUplo-LogAndMetricsDeliveryRol-QAFRJPHRFVVQ
+[2020-12-06T16:28:21Z] WARNING  - Successfully submitted type. Waiting for registration with token '1c7a9e49-6869-4d3d-99ce-9ae5c92e8ca1' to complete.
+[2020-12-06T16:28:52Z] WARNING  - Registration complete.
+[2020-12-06T16:28:52Z] WARNING  - {'ProgressStatus': 'COMPLETE', 'Description': 'Deployment is currently in DEPLOY_STAGE of status COMPLETED; ', 'TypeArn': 'arn:aws:cloudformation:eu-central-1:795048271754:type/module/tecracer-dynamodb-gotable-MODULE', 'TypeVersionArn': 'arn:aws:cloudformation:eu-central-1:795048271754:type/module/tecracer-dynamodb-gotable-MODULE/00000003', 'ResponseMetadata': {'RequestId': '7378f4fc-424f-4160-aeec-08ae70cf3a27', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': '7378f4fc-424f-4160-aeec-08ae70cf3a27', 'content-type': 'text/xml', 'content-length': '705', 'date': 'Sun, 06 Dec 2020 16:28:51 GMT'}, 'RetryAttempts': 0}}
+[2020-12-06T16:28:52Z] DEBUG    - Finished submit

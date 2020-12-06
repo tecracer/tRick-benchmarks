@@ -1,0 +1,35 @@
+{
+  "name": "lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "author": "gglawe@tecracer.de",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^10.17.5",
+    "ts-node": "^8.1.0",
+    "typescript": "~3.7.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.729.0",
+    "util": "^0.12.3"
+  },
+  "targets": {
+    "cdk-lambda": {
+      "context": "node",
+      "includeNodeModules": {
+        "aws-sdk": false
+      },
+      "sourceMap": false,
+      "minify": false,
+      "engines": {
+        "node": ">= 12"
+      }
+    }
+  }
+}

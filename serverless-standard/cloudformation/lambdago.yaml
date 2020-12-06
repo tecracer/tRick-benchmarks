@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: "Create a lambda as module stream that writes to S3"
+Resources:
+  golambda:
+    Type: tecracer::lambda::golambda::MODULE
+    Properties:
+      DeploymentBucket: !Ref Bucket
+      DeploymentKey: !Ref Key
+
+  uploads:
+    Type: tecracer::dynamodb::gotable::MODULE
+
+  tablepolicy:
+    Type: tecracer::IAM::tablepolicy::MODULE
+    Properties:
+      tableParm: !GetAtt uploadsTable.Arn
+      functionrole: !GetAtt golambdaLambdaGoServiceRole
+
+Parameters:
+  Bucket:
+    Type: String
+    Description: S3 bucket for asset
+  Key:
+    Type: String
+    Description: S3 key for asset version      

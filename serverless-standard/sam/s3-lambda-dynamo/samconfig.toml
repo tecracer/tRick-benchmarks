@@ -3,10 +3,21 @@ version = 0.1
 [default.deploy]
 [default.deploy.parameters]
 stack_name = "s3-lambda-dynamo"
-s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-do77yxcwkoqw"
-s3_prefix = "s3-lambda-dynamo"
-region = "eu-south-1"
-profile = "letsbuild-devopsnerd"
+s3_bucket = "cdktoolkit-stagingbucket-vvch7n3y2xqp"
+s3_prefix = "s3-lambda-dynamo-sam"
+region = "eu-central-1"
+profile = "letsbuild"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
 
+
+[dev]
+[dev.deploy]
+[dev.deploy.parameters]
+stack_name = "s3-lambda-dynamo-sam"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1t115jm9db9bv"
+s3_prefix = "s3-lambda-dynamo-sam"
+region = "eu-central-1"
+profile = "letsbuild"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"

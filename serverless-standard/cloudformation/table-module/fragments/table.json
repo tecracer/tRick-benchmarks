@@ -1,0 +1,28 @@
+{
+    "Description": "trick-serverless-standard CDK: go aws sdk v1",
+    "Resources": {
+        "Table": {
+            "Type": "AWS::DynamoDB::Table",
+            "Properties": {
+                "KeySchema": [
+                    {
+                        "AttributeName": "itemID",
+                        "KeyType": "HASH"
+                    }
+                ],
+                "AttributeDefinitions": [
+                    {
+                        "AttributeName": "itemID",
+                        "AttributeType": "S"
+                    }
+                ],
+                "ProvisionedThroughput": {
+                    "ReadCapacityUnits": 5,
+                    "WriteCapacityUnits": 5
+                }
+            },
+            "UpdateReplacePolicy": "Delete",
+            "DeletionPolicy": "Delete"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "typeName": "tecracer::dynamodb::gotable::MODULE",
+    "description": "Schema for Module Fragment of type tecracer::dynamodb::gotable::MODULE",
+    "properties": {
+        "Resources": {
+            "properties": {
+                "Table": {
+                    "type": "object",
+                    "properties": {
+                        "Type": {
+                            "type": "string",
+                            "const": "AWS::DynamoDB::Table"
+                        },
+                        "Properties": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": true
+}
