@@ -33,7 +33,7 @@ tasks:
   deploy-stack:
     desc: First time stack deploy
     cmds: 
-      - aws cloudformation deploy --stack-name {{.STACK}}  --template-file {{.TEMPLATE}} --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM  --parameters file://parms.json
+      - aws cloudformation deploy --stack-name {{.STACK}}  --template-file {{.TEMPLATE}} --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM  --parameter-overrides  file://parms.json
       - cfn-tail trick-cloudformation
 
   delete-stack:
