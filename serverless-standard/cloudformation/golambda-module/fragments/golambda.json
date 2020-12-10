@@ -51,7 +51,14 @@
           ]
         },
         "Runtime": "go1.x",
-        "MemorySize": 1024
+        "MemorySize": 1024,
+        "Environment": {
+          "Variables": {
+            "TableName": {
+              "Ref": "Table"
+            }
+          }
+        },
       }
     }
   },
@@ -63,6 +70,10 @@
     "DeploymentKey": {
       "Type": "String",
       "Description": "S3 key for asset version"
+    },
+    "Table": {
+      "Type": "String",
+      "Description": "Name of dynamodb table"
     }
   },
   "Outputs": {

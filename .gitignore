@@ -23,3 +23,7 @@ serverless-standard/cdk-lambda-go/lambda/dist/main.zip
 serverless-standard/cdk-lambda-gov2/lambda-go-v2/dist
 serverless-standard/cdk-lambda-ts/dist
 serverless-standard/goserverless/s3-lambda-dynamo/.serverless
+serverless-standard/cloudformation/golambda-module/rpdk.log
+serverless-standard/cloudformation/table-module/rpdk.log
+serverless-standard/cloudformation/table-policy/rpdk.log
+serverless-standard/cloudformation/rpdk.log

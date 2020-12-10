@@ -1,6 +1,6 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
-    "Description": "POlicy for lambda to access tables",
+    "Description": "Policy for lambda to access tables",
     "Resources": {
         "LambdaDynamodb": {
             "Type": "AWS::IAM::Policy",

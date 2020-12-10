@@ -13,37 +13,31 @@ tasks:
     desc: Deploy cfn module lambda
     dir: golambda-module
     cmds:
-      - cfn submit -v
+      - cfn submit -v --set-default
     silent: true
 
   deploy-module-table:
     desc: Deploy cfn module dynamodb
     dir: table-module
     cmds:
-      - cfn submit -v
+      - cfn submit -v --set-default
     silent: true
 
   deploy-module-policy:
     desc: Deploy cfn module dynamodb
     dir: table-policy
     cmds:
-      - cfn submit -v
+      - cfn submit -v --set-default
     silent: true
 
-  create-stack:
-    desc: First time stack deploye
+  deploy-stack:
+    desc: First time stack deploy
     cmds: 
-      - aws cloudformation create-stack --stack-name {{.STACK}}  --template-body file://{{.TEMPLATE}} --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM  --parameters file://parms.json
-      - cfn-tail trick-cloudformation
-
-  update-stack:
-    desc: First time stack deploye
-    cmds: 
-      - aws cloudformation update-stack --stack-name {{.STACK}}  --template-body file://{{.TEMPLATE}} --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM  --parameters file://parms.json
+      - aws cloudformation deploy --stack-name {{.STACK}}  --template-body file://{{.TEMPLATE}} --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM  --parameters file://parms.json
       - cfn-tail trick-cloudformation
 
   delete-stack:
-    desc: First time stack deploye
+    desc: First time stack deploy
     cmds: 
       - aws cloudformation delete-stack --stack-name {{.STACK}} 
       - cfn-tail trick-cloudformation

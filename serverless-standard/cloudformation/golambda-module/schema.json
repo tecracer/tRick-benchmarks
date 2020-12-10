@@ -36,6 +36,22 @@
                         "Description"
                     ],
                     "description": "S3 key for asset version"
+                },
+                "Table": {
+                    "type": "object",
+                    "properties": {
+                        "Type": {
+                            "type": "string"
+                        },
+                        "Description": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "Type",
+                        "Description"
+                    ],
+                    "description": "Name of dynamodb table"
                 }
             }
         },

@@ -1,11 +1,12 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: "Create a lambda as module stream that writes to S3"
+Description: "Create a lambda as module that writes to dynamodb"
 Resources:
   golambda:
     Type: tecracer::lambda::golambda::MODULE
     Properties:
       DeploymentBucket: !Ref Bucket
       DeploymentKey: !Ref Key
+      Table: !Ref uploadsTable
 
   uploads:
     Type: tecracer::dynamodb::gotable::MODULE
@@ -14,7 +15,7 @@ Resources:
     Type: tecracer::IAM::tablepolicy::MODULE
     Properties:
       tableParm: !GetAtt uploadsTable.Arn
-      functionrole: !GetAtt golambdaLambdaGoServiceRole
+      functionrole: !Ref golambdaLambdaGoServiceRole
 
 Parameters:
   Bucket:
