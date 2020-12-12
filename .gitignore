@@ -27,3 +27,4 @@ serverless-standard/cloudformation/golambda-module/rpdk.log
 serverless-standard/cloudformation/table-module/rpdk.log
 serverless-standard/cloudformation/table-policy/rpdk.log
 serverless-standard/cloudformation/rpdk.log
+serverless-standard/cloudformation/lambda/dist

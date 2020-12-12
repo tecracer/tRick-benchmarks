@@ -1,7 +1,7 @@
 [
   {
     "ParameterKey": "Bucket",
-    "ParameterValue": "cdktoolkit-stagingbucket-vvch7n3y2xqp"
+    "ParameterValue": "cloudformationmanageduploadinfra-accesslogsbucket-ups9jp5vg5w9"
   }, 
   {
     "ParameterKey": "Key",

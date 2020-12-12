@@ -81,11 +81,6 @@
       "Value": {
         "Ref": "LambdaGo"
       }
-    },
-    "LambdaRole": {
-      "Value": {
-        "Ref": "LambdaGoServiceRole"
-      }
     }
   }
 }

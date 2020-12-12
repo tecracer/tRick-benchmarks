@@ -6,8 +6,10 @@ version: '2'
 
 env:
   AWS_DEFAULT_REGION: eu-central-1
+  # Pager for aws cli v2. Set to empty for batch scripting, otherwise to less
+  AWS_PAGER: ""
 vars:  
-  BUCKET: cdktoolkit-stagingbucket-vvch7n3y2xqp
+  BUCKET: cloudformationmanageduploadinfra-accesslogsbucket-ups9jp5vg5w9
   KEY: lambda-latest.zip
   REGION: eu-central-1
 
@@ -45,6 +47,15 @@ tasks:
         sh: aws cloudformation list-exports --query "Exports[?Name == 'lambda-go-v2-name'].Value" --output text
     cmds:
       - aws lambda update-function-code --function-name  {{.FN}} --zip-file fileb://dist/main.zip
+
+  fastlargedeploy:
+    desc: Deploy only lambda
+    deps: [build,s3deploy]
+    vars:
+      FN:      
+        sh: aws cloudformation list-exports --query "Exports[?Name == 'lambda-go-v2-name'].Value" --output text
+    cmds:
+      - aws lambda update-function-code --function-name  {{.FN}} --s3-bucket {{.BUCKET}} --s3-key {{.KEY}} 
 
   itest:
     desc: call lambda

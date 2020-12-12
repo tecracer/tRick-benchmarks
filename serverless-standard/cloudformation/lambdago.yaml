@@ -1,5 +1,13 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: "Create a lambda as module that writes to dynamodb"
+Parameters:
+  Bucket:
+    Type: String
+    Description: S3 bucket for asset
+  Key:
+    Type: String
+    Description: S3 key for asset version      
+
 Resources:
   golambda:
     Type: tecracer::lambda::golambda::MODULE
@@ -17,10 +25,9 @@ Resources:
       tableParm: !GetAtt uploadsTable.Arn
       functionrole: !Ref golambdaLambdaGoServiceRole
 
-Parameters:
-  Bucket:
-    Type: String
-    Description: S3 bucket for asset
-  Key:
-    Type: String
-    Description: S3 key for asset version      
+Outputs:      
+  LambdaName:
+    Description: LambdaName
+    Value: !Ref golambdaLambdaGo
+    Export: 
+      Name: "lambda-go-v2-name"
