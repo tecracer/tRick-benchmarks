@@ -1,0 +1,23 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+
+  install:
+    desc: install sam
+    cmds:
+      - brew tap aws/tap
+      - brew install aws-sam-cli
+  build:
+    desc: build with sam
+    cmds:
+      - sam build --user-container
+
+  deploy:
+    desc: deploy with sam
+    cmds:
+      - sam deploy --guided

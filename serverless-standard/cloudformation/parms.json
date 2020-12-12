@@ -1,0 +1,10 @@
+[
+  {
+    "ParameterKey": "Bucket",
+    "ParameterValue": "cloudformationmanageduploadinfra-accesslogsbucket-ups9jp5vg5w9"
+  }, 
+  {
+    "ParameterKey": "Key",
+    "ParameterValue": "lambda-latest.zip"
+  }
+]

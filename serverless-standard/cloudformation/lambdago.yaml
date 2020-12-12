@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: "Create a lambda as module that writes to dynamodb"
+Parameters:
+  Bucket:
+    Type: String
+    Description: S3 bucket for asset
+  Key:
+    Type: String
+    Description: S3 key for asset version      
+
+Resources:
+  golambda:
+    Type: tecracer::lambda::golambda::MODULE
+    Properties:
+      DeploymentBucket: !Ref Bucket
+      DeploymentKey: !Ref Key
+      Table: !Ref uploadsTable
+
+  uploads:
+    Type: tecracer::dynamodb::gotable::MODULE
+
+  tablepolicy:
+    Type: tecracer::IAM::tablepolicy::MODULE
+    Properties:
+      tableParm: !GetAtt uploadsTable.Arn
+      functionrole: !Ref golambdaLambdaGoServiceRole
+
+Outputs:      
+  LambdaName:
+    Description: LambdaName
+    Value: !Ref golambdaLambdaGo
+    Export: 
+      Name: "lambda-go-v2-name"

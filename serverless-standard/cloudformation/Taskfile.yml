@@ -1,0 +1,66 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  STACK: trick-cloudformation
+  TEMPLATE: lambdago.yaml
+  REGION: eu-central-1
+
+env:
+  AWS_PAGER: ""  
+
+tasks:
+  deploy-module-lambda:
+    desc: Deploy cfn module lambda
+    dir: golambda-module
+    cmds:
+      - cfn submit -v --set-default
+    silent: true
+
+  deploy-module-table:
+    desc: Deploy cfn module dynamodb
+    dir: table-module
+    cmds:
+      - cfn submit -v --set-default
+    silent: true
+
+  deploy-module-policy:
+    desc: Deploy cfn module dynamodb
+    dir: table-policy
+    cmds:
+      - cfn submit -v --set-default
+    silent: true
+
+  create-stack:
+    desc: First time stack create
+    cmds: 
+      - aws cloudformation create-stack --stack-name {{.STACK}}  --template-body file://{{.TEMPLATE}} --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM  --parameters file://parms.json --region {{.REGION}}
+      - cfn-tail trick-cloudformation --region {{.REGION}}
+
+  update-stack:
+    desc: First time stack deploy
+    cmds: 
+      - aws cloudformation update-stack --stack-name {{.STACK}}  --template-body file://{{.TEMPLATE}} --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM  --parameters file://parms.json --region {{.REGION}}
+      - cfn-tail trick-cloudformation --region {{.REGION}}
+
+  deploy-stack:
+    desc: stack deploy
+    cmds: 
+      - aws cloudformation deploy --stack-name {{.STACK}}  --template-file {{.TEMPLATE}} --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM  --parameter-overrides  file://parms.json --region {{.REGION}}
+      - cfn-tail trick-cloudformation --region {{.REGION}}
+
+  delete-stack:
+    desc: First time stack deploy
+    cmds: 
+      - aws cloudformation delete-stack --stack-name {{.STACK}} --region {{.REGION}}
+      - cfn-tail trick-cloudformation --region {{.REGION}}
+
+  cycle:
+    desc: Reset and redeploy all
+    cmds: 
+      - task: deploy-module-lambda
+      - task: deploy-module-table
+      - task: deploy-module-policy
+      - task: delete-stack
+      - task: create-stack

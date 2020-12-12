@@ -1,0 +1,28 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  install:
+    desc: install on mac
+    cmds:
+      - npm install -g serverless
+
+  setup:
+    desc: initial setup
+    cmd:
+      - serverless
+
+  deploy:
+    desc: deploy 
+    cmds:
+      - sls deploy
+
+
+  destroy:
+    desc: destroy app
+    cmds:
+      - sls remove

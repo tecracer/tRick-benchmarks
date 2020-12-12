@@ -1,0 +1,49 @@
+# https://taskfile.dev
+
+## Build Management only for go
+
+version: '2'
+
+env:
+  AWS_DEFAULT_REGION: eu-central-1
+
+tasks:
+  default:
+    deps: [build]
+
+  build:
+    desc: build ts
+    cmds:
+      - npm run build
+    silent: true
+
+  fastdeploy:
+    desc: Deploy only lambda
+    deps: [build]
+    vars:
+      FN:      
+        sh: aws cloudformation list-exports --query "Exports[?Name == 'lambda-trick-ts-name'].Value" --output text
+    cmds:
+      - aws lambda update-function-code --function-name  {{.FN}} --zip-file fileb://dist/main.zip
+
+  itest:
+    desc: call lambda
+    deps: [build]
+    env: 
+      AWS_PAGER: ""
+    vars:
+      FN:      
+        sh: aws cloudformation list-exports --query "Exports[?Name == 'lambda-trick-ts-name'].Value" --output text
+      TABLE:      
+        sh: aws cloudformation list-exports --query "Exports[?Name == 'trick-Table-ts-name'].Value" --output text
+    cmds:
+      - time aws lambda invoke --function-name {{.FN}} --payload fileb://./test/put.json  test/result.json
+      - date
+      - aws dynamodb scan --table-name {{.TABLE}}
+
+  test:
+    desc: call go test
+    deps: [build]
+    cmds:
+      - go test
+

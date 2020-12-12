@@ -58,7 +58,7 @@ def putDynamoItem(tableName, itemKey):
     response = dynamoClient.put_item(
         TableName=tableName,
         Item={
-            'objectId': {
+            'itemID': {
                 'S': itemKey
             }
         },

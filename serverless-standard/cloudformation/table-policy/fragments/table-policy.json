@@ -1,0 +1,52 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Policy for lambda to access tables",
+    "Resources": {
+        "LambdaDynamodb": {
+            "Type": "AWS::IAM::Policy",
+            "Properties": {
+                "PolicyDocument": {
+                    "Statement": [
+                        {
+                            "Action": [
+                                "dynamodb:BatchGetItem",
+                                "dynamodb:GetRecords",
+                                "dynamodb:GetShardIterator",
+                                "dynamodb:Query",
+                                "dynamodb:GetItem",
+                                "dynamodb:Scan",
+                                "dynamodb:BatchWriteItem",
+                                "dynamodb:PutItem",
+                                "dynamodb:UpdateItem",
+                                "dynamodb:DeleteItem"
+                            ],
+                            "Effect": "Allow",
+                            "Resource": [
+                                {
+                                    "Ref" : "tableParm"
+                                }
+                            ]
+                        }
+                    ],
+                    "Version": "2012-10-17"
+                },
+                "PolicyName": "LambdaGoV2ServiceRoleTable",
+                "Roles": [
+                    {
+                        "Ref": "functionrole"
+                    }
+                ]
+            }
+        }
+    },
+    "Parameters": {
+        "tableParm": {
+            "Type": "String",
+            "Description": "table arn"
+        },
+        "functionrole": {
+            "Type": "String",
+            "Description": "policy of lambda function"
+        }
+    }
+}
