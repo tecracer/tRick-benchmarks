@@ -1,0 +1,27 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  1-init:
+    desc: Get AWS provider
+    cmds:
+      - terraform init
+
+  2-plan:
+    desc: build graph
+    cmds:
+      - terraform plan
+
+  3-apply:
+    desc: apply graph, build resources
+    cmds:
+      - terraform apply
+
+  4-destroy:
+    desc: destroy resources
+    cmds:
+      - terraform destroy
