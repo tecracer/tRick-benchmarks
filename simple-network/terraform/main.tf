@@ -9,7 +9,7 @@ resource "aws_vpc" "vpc" {
 }
 
 resource "aws_subnet" "public_subnet" {
-  availability_zone       = var.region+var.availability_zone
+  availability_zone       = join("",[var.region, var.availability_zone])
   cidr_block              = cidrsubnet(var.cidr_block, 8, 0)
   map_public_ip_on_launch = true
   vpc_id                  = aws_vpc.vpc.id
