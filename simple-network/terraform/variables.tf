@@ -21,6 +21,7 @@ variable "tags" {
   description = "Tags to be assigned to resources created for the benchmark"
 
   default = {
+    Name        = "trick-vpc"
     Created-For = "tRick Benchmark"
     Created-By  = "Terraform"
   }
