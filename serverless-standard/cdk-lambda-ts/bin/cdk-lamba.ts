@@ -4,6 +4,6 @@ import * as cdk from '@aws-cdk/core';
 import { CdkLambdaStack } from '../lib/cdk-lamba-stack';
 
 const app = new cdk.App();
-new CdkLambdaStack(app, 'tricksCdkLambaTSStack', {
+new CdkLambdaStack(app, 'lambda-ts', {
     description: "trick-serverless-standard CDK: TypeScript"
 });

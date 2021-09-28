@@ -27,6 +27,7 @@
     "@aws-cdk/aws-s3": "^1.65.0",
     "@aws-cdk/core": "1.65.0",
     "destroyable-bucket": "^1.15.0",
+    "npm-update": "^2.1.0",
     "source-map-support": "^0.5.19"
   }
 }

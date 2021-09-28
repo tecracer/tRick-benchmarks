@@ -28,7 +28,7 @@ The `Taskfile` scripts does that for you with `task deploy`.
 
     `cdk --version`
 
-    If not, install the neweset cdk 
+    If not, install the new cdk 
 
     `npm i cdk -g`
 

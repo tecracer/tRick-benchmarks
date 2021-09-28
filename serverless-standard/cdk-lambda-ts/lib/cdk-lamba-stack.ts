@@ -74,7 +74,7 @@ export class CdkLambdaStack extends Stack {
     fn.addEnvironment('TableName', table.tableName);
     
     // least privileges
-    table.grantReadData(fn);
+    table.grantReadWriteData(fn);
 
 
 
