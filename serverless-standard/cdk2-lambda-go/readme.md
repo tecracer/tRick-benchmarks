@@ -21,6 +21,7 @@ From base directory, using cdk2
 
 ```bash
 cd infra
+npm i
 cdk deploy
 ```
 
