@@ -25,11 +25,12 @@ export class CdkLambdaStack extends Stack {
 
     
     const fn = new Function(this, 'fn', {
-      code: Code.asset(path.join(__dirname, '../lambda')),
+      code: Code.fromAsset(path.join(__dirname, '../lambda')),
       handler: 'index.lambdaHandler',
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_16_X,
       memorySize: 1024,
-      description: "trick-serverless-typescript"
+      description: "trick-serverless-typescript-2022",
+      
     });
 
     new CfnOutput(this, "LambdaName",{

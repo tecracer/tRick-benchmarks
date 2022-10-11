@@ -14,7 +14,7 @@ tasks:
   build:
     desc: build go
     cmds:
-      - env GOOS=linux go build -ldflags="-s -w" -o dist/main main/main.go
+      - env GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o dist/main main/main.go
       - chmod +x dist/main
       - cd dist && zip main.zip main
     sources:

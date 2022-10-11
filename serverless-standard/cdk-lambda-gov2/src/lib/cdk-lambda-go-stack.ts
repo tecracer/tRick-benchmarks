@@ -19,7 +19,7 @@ export class CdkLambdaGoStack extends Stack {
         code: Code.fromAsset(join(__dirname, '../../lambda-go-v2/dist/main.zip')),
         handler: 'main',
         runtime: Runtime.GO_1_X,
-        memorySize: 1024,
+        memorySize: 128,
       });
 
     new CfnOutput(this, 'LambdaName', {
