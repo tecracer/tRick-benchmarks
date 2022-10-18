@@ -29,3 +29,4 @@ serverless-standard/cloudformation/table-policy/rpdk.log
 serverless-standard/cloudformation/rpdk.log
 serverless-standard/cloudformation/lambda/dist
 serverless-standard/cdk2-lambda-go/app/dist
+.aws-sam

@@ -1,0 +1,18 @@
+{
+    "Contents": [
+        {
+            "Key": "demo_code/api.zip",
+            "LastModified": "2022-10-18T05:57:57+00:00",
+            "ETag": "\"364ca0c7d26aa4bf359d7397ea31c082\"",
+            "Size": 16435,
+            "StorageClass": "STANDARD"
+        },
+        {
+            "Key": "demo_code/web.zip",
+            "LastModified": "2022-10-18T05:57:58+00:00",
+            "ETag": "\"3a89b9bc9a7fe49118486c17d38d5942\"",
+            "Size": 191700,
+            "StorageClass": "STANDARD"
+        }
+    ]
+}

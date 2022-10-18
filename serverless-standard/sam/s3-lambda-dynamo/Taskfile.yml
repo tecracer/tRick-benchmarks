@@ -15,7 +15,7 @@ tasks:
   build:
     desc: build with sam
     cmds:
-      - sam build --user-container
+      - sam build --use-container
 
   deploy:
     desc: deploy with sam
