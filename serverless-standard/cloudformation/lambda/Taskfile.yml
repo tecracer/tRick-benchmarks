@@ -9,7 +9,7 @@ env:
   # Pager for aws cli v2. Set to empty for batch scripting, otherwise to less
   AWS_PAGER: ""
 vars:  
-  BUCKET: cloudformationmanageduploadinfra-accesslogsbucket-ups9jp5vg5w9
+  BUCKET: letstrain-aws
   KEY: lambda-latest.zip
   REGION: eu-central-1
 
@@ -33,9 +33,6 @@ tasks:
   s3deploy:
     desc: Deploy only lambda
     deps: [build]
-    vars:
-      FN:      
-        sh: aws cloudformation list-exports --query "Exports[?Name == 'lambda-go-v2-name'].Value" --output text
     cmds:
       - aws s3 cp ./dist/main.zip s3://{{.BUCKET}}/{{.KEY}} --region {{.REGION}}
 

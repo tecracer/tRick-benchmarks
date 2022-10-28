@@ -11,47 +11,54 @@ env:
   AWS_PAGER: ""  
 
 tasks:
+  init:
+    desc: Install cli, cfn-tail
+    cmds:
+      - brew install cloudformation-cli
+      - npm install -g cfn-tail
+
   deploy-module-lambda:
-    desc: Deploy cfn module lambda
+    desc: 1) Deploy cfn module lambda
     dir: golambda-module
     cmds:
       - cfn submit -v --set-default
     silent: true
 
-  deploy-module-table:
-    desc: Deploy cfn module dynamodb
-    dir: table-module
-    cmds:
-      - cfn submit -v --set-default
-    silent: true
-
   deploy-module-policy:
-    desc: Deploy cfn module dynamodb
+    desc: 2) Deploy cfn module dynamodb
     dir: table-policy
     cmds:
       - cfn submit -v --set-default
     silent: true
 
+  deploy-module-table:
+    desc: 3) Deploy cfn module dynamodb
+    dir: table-module
+    cmds:
+      - cfn submit -v --set-default
+    silent: true
+
+
   create-stack:
-    desc: First time stack create
+    desc: 4) First time stack create
     cmds: 
       - aws cloudformation create-stack --stack-name {{.STACK}}  --template-body file://{{.TEMPLATE}} --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM  --parameters file://parms.json --region {{.REGION}}
       - cfn-tail trick-cloudformation --region {{.REGION}}
 
   update-stack:
-    desc: First time stack deploy
+    desc: 5) Secone time stack update
     cmds: 
       - aws cloudformation update-stack --stack-name {{.STACK}}  --template-body file://{{.TEMPLATE}} --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM  --parameters file://parms.json --region {{.REGION}}
       - cfn-tail trick-cloudformation --region {{.REGION}}
 
   deploy-stack:
-    desc: stack deploy
+    desc: 4,5) stack deploy
     cmds: 
       - aws cloudformation deploy --stack-name {{.STACK}}  --template-file {{.TEMPLATE}} --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM  --parameter-overrides  file://parms.json --region {{.REGION}}
       - cfn-tail trick-cloudformation --region {{.REGION}}
 
   delete-stack:
-    desc: First time stack deploy
+    desc: 6) Delete stack
     cmds: 
       - aws cloudformation delete-stack --stack-name {{.STACK}} --region {{.REGION}}
       - cfn-tail trick-cloudformation --region {{.REGION}}
