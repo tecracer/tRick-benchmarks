@@ -1,7 +1,6 @@
 import { aws_dynamodb, aws_lambda, aws_lambda_event_sources, aws_s3, CfnOutput, RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib';
 import {  PythonFunction } from '@aws-cdk/aws-lambda-python-alpha';
 import { Construct } from 'constructs';
-import { join } from 'path';
 
 export class Cdk2LambdaPythonStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -38,11 +37,11 @@ export class Cdk2LambdaPythonStack extends Stack {
      // Bucket end *******************
  
      // Event start *******************
-     fn.addEventSource( new aws_s3.S3EventSource(bucky, {
-       events: [
-         aws_s3.EventType.OBJECT_CREATED,
-       ],
-     }));
+     fn.addEventSource( new aws_lambda_event_sources.S3EventSource(bucky, {
+      events: [
+        aws_s3.EventType.OBJECT_CREATED,
+      ],
+    }));
      // Event End   *******************
  
      //** Dynamodb start */

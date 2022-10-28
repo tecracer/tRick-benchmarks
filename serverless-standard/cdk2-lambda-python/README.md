@@ -1,14 +1,52 @@
-# Welcome to your CDK TypeScript project!
+# CDK2 with python lambda
 
-This is a blank project for TypeScript development with CDK.
+Deployment with docker
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
-## Useful commands
+1) Start docker
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+    On Mac: 
+
+    ```bash
+    open -a docker
+    ```
+
+2) Deploy Lambda/Create Dynamodb
+
+    From base directory, using cdk2
+
+    ```bash
+    npm i
+    cdk deploy --require-approval never
+    ```
+
+
+3) Test
+
+- Check Dynamoddb entries - should be zero
+
+```bash
+aws dynamodb scan --table-name "Cdk2LambdaPythonStack-items07D08F4B-1DPGZZKU2TBR1"
+```
+
+Output like:
+```json
+{
+    "Items": [],
+    "Count": 0,
+    "ScannedCount": 0,
+    "ConsumedCapacity": null
+}
+```
+
+- Replace Bucket name in command:
+
+```bash
+aws s3 cp ../readme.md s3://cdk2lambdapythonstack-incominggov27c7b0bad-19uswqghifalt/dummy.txt
+```
+
+4) Check DynamoDB entries
+
+```bash
+aws dynamodb scan --table-name "Cdk2LambdaPythonStack-items07D08F4B-1DPGZZKU2TBR1"
+```
