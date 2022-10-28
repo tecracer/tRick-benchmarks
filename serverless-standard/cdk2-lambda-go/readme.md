@@ -22,19 +22,59 @@ From base directory, using cdk2
 ```bash
 cd infra
 npm i
-cdk deploy
+cdk deploy --require-approval never
 ```
+
+Note bucket name and table name from output.
 
 4) Test
 
-- Find Name from s3bucket
-- Replace Name in command:
+- Check Dynamoddb entries - should be zero
 
 ```bash
-aws s3 cp ../readme.md s3://cdk2lambdagostack-incoming0b397865-1wpb09c9rp9dv/dummy.txt
+aws dynamodb scan --table-name "items"
+```
+
+Output like:
+```json
+{
+    "Items": [],
+    "Count": 0,
+    "ScannedCount": 0,
+    "ConsumedCapacity": null
+}
+```
+
+- Replace Bucket name in command:
+
+```bash
+aws s3 cp ../readme.md s3://cdk2lambdagostack-incoming0b397865-8yyp40jh593s/dummy.txt
 ```
 
 5) Check DynamoDB entries
+
+```bash
+aws dynamodb scan --table-name "items"
+```
+
+Output like:
+```json
+{
+    "Items": [
+        {
+            "itemID": {
+                "S": "dummy.txt"
+            },
+            "time": {
+                "S": "2022-10-28 13:37:38.552396449 +0000 UTC m=+0.065920903"
+            }
+        }
+    ],
+    "Count": 1,
+    "ScannedCount": 1,
+    "ConsumedCapacity": null
+}
+```
 
 6) Destroy
 

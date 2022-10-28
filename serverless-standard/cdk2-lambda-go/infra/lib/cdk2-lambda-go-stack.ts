@@ -56,6 +56,9 @@ export class Cdk2LambdaGoStack extends Stack {
 
     fn.addEnvironment('TableName', table.tableName);
     table.grantReadWriteData(fn);
+    new CfnOutput(this, 'TableName', {
+      value: table.tableName,
+    });
     //** Dynamodb End */
 
   }
