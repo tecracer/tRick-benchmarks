@@ -1,0 +1,13 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  bootstrap:
+    dir: infra
+    cmds:
+      - cdk bootstrap
+    silent: true

@@ -48,7 +48,7 @@ Output like:
 - Replace Bucket name in command:
 
 ```bash
-aws s3 cp ../readme.md s3://cdk2lambdagostack-incoming0b397865-8yyp40jh593s/dummy.txt
+aws s3 cp ../readme.md s3://cdk2lambdagostack-incoming0b397865-3cm12d9dey8oe/dummy.txt
 ```
 
 5) Check DynamoDB entries
@@ -84,3 +84,8 @@ From base directory, using cdk2
 cd infra
 cdk destroy
 ```
+
+## X-Ray Test
+
+Call `test/traffic.sh` to create traffic.
+With these calls you can analyze the X.Ray traces.

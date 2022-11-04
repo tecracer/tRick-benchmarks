@@ -50,3 +50,9 @@ aws s3 cp ../readme.md s3://cdk2lambdapythonstack-incominggov27c7b0bad-19uswqghi
 ```bash
 aws dynamodb scan --table-name "Cdk2LambdaPythonStack-items07D08F4B-1DPGZZKU2TBR1"
 ```
+
+
+## X-Ray Test
+
+Call `test/traffic.sh` to create traffic.
+With these calls you can analyze the X.Ray traces.

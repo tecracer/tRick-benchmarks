@@ -13,6 +13,8 @@ export class Cdk2LambdaGoStack extends Stack {
         handler: 'main',
         runtime: aws_lambda.Runtime.GO_1_X,
         memorySize: 1024,
+        insightsVersion: aws_lambda.LambdaInsightsVersion.VERSION_1_0_143_0,
+        tracing: aws_lambda.Tracing.ACTIVE,
       });
 
     new CfnOutput(this, 'LambdaName', {
@@ -52,6 +54,7 @@ export class Cdk2LambdaGoStack extends Stack {
       },
       tableName: 'items',
       removalPolicy: RemovalPolicy.DESTROY, // NOT recommended for production code
+      billingMode: aws_dynamodb.BillingMode.PAY_PER_REQUEST,
     });
 
     fn.addEnvironment('TableName', table.tableName);

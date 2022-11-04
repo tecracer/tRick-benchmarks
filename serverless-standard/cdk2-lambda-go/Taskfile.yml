@@ -1,0 +1,26 @@
+# https://taskfile.dev
+
+version: '3'
+
+includes:
+  app: ./app
+  infra: ./infra
+
+tasks:
+  bootstrap:
+    dir: infra
+    desc: CDK bootstrap
+    cmds:
+      - task: infra:bootstrap
+
+  deploy:
+    desc: Deploy stack
+    dir: infra
+    cmds:
+      - npx cdk deploy --require-approval never --notification-arns 
+    silent: true
+
+  update:
+    desc: Update function code
+    cmds:
+      - cd app && task fastdeploy
