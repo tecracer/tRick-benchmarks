@@ -1,6 +1,7 @@
 import { aws_dynamodb, aws_lambda, aws_lambda_event_sources, aws_s3, CfnOutput, RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib';
 import {  PythonFunction } from '@aws-cdk/aws-lambda-python-alpha';
 import { Construct } from 'constructs';
+import { RetentionDays } from 'aws-cdk-lib/aws-logs';
 
 export class Cdk2LambdaPythonStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -13,6 +14,9 @@ export class Cdk2LambdaPythonStack extends Stack {
        runtime: aws_lambda.Runtime.PYTHON_3_8,
        memorySize: 1024,
        description: 'trick-serverless-python',
+       logRetention: RetentionDays.ONE_MONTH,
+       insightsVersion: aws_lambda.LambdaInsightsVersion.VERSION_1_0_135_0,
+       tracing: aws_lambda.Tracing.ACTIVE,
      });
  
      new CfnOutput(this, 'LambdaName', {
