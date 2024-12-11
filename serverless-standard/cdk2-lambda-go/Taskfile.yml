@@ -17,7 +17,9 @@ tasks:
     desc: Deploy stack
     dir: infra
     cmds:
-      - npx cdk deploy --require-approval never --notification-arns 
+      - ncu -u
+      - npm i 
+      - npx cdk deploy --require-approval never 
     silent: true
 
   update:

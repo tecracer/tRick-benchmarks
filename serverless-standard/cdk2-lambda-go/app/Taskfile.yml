@@ -4,6 +4,9 @@
 
 version: '3'
 
+vars:
+  ARTIFACTS_DIR: dist
+  ARTIFACTS_NAME: bootstrap
 env:
   AWS_DEFAULT_REGION: eu-central-1
 
@@ -14,10 +17,13 @@ tasks:
   build:
     desc: build go
     cmds:
-      - env GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o dist/main main/main.go
-      - chmod +x dist/main
-      - cd dist && zip main.zip main
-    silent: true
+      - mkdir -p {{.ARTIFACTS_DIR}}
+      - rm -f  {{.ARTIFACTS_DIR}}/*
+      - go mod tidy
+      - env GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -tags lambda.norpc -ldflags="-s -w" -o bootstrap main/main.go
+      - cp ./bootstrap {{.ARTIFACTS_DIR}}/{{.ARTIFACTS_NAME}}
+      - cd {{.ARTIFACTS_DIR}} && zip bootstrap.zip bootstrap 
+    silent: false
 
   fastdeploy:
     desc: Deploy only lambda
@@ -26,6 +32,6 @@ tasks:
       FN:      
         sh: aws cloudformation list-exports --query "Exports[?Name == 'lambda-go-name'].Value" --output text
     cmds:
-      - aws lambda update-function-code --function-name  {{.FN}} --zip-file fileb://dist/main.zip
+      - aws lambda update-function-code --function-name  {{.FN}} --zip-file fileb://dist/bootstrap.zip
 
 

@@ -9,9 +9,9 @@ export class Cdk2LambdaGoStack extends Stack {
 
     const fn = new aws_lambda.Function(this, 'LambdaGo',
       {
-        code: aws_lambda.Code.fromAsset(join(__dirname, '../../app/dist/main.zip')),
+        code: aws_lambda.Code.fromAsset(join(__dirname, '../../app/dist/bootstrap.zip')),
         handler: 'main',
-        runtime: aws_lambda.Runtime.GO_1_X,
+        runtime: aws_lambda.Runtime.PROVIDED_AL2023,
         memorySize: 1024,
         insightsVersion: aws_lambda.LambdaInsightsVersion.VERSION_1_0_143_0,
         tracing: aws_lambda.Tracing.ACTIVE,
