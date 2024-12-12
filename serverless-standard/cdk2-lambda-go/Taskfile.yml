@@ -3,8 +3,12 @@
 version: '3'
 
 includes:
-  app: ./app
-  infra: ./infra
+  app: 
+    taskfile: ./app/Taskfile.yml
+    dir: ./app
+  infra: 
+    taskfile: ./infra/Taskfile.yml
+    dir: ./infra
 
 tasks:
   bootstrap:
@@ -21,6 +25,12 @@ tasks:
       - npm i 
       - npx cdk deploy --require-approval never 
     silent: true
+
+  destroy:
+    desc: Destroy stack
+    dir: infra
+    cmds:
+      - npx cdk destroy --force
 
   update:
     desc: Update function code
