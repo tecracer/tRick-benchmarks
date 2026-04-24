@@ -6,9 +6,13 @@ vars:
   GREETING: Hello, World!
   zip: ../dist/hello.zip
   lambda: lambda-ts-fn5FF616E3-PDzWTNLWC0R6
-  bucket: lambda-ts-incoming0b397865-yj8gzs8z3jzu
+  bucket:
+    sh: aws cloudformation describe-stacks --stack-name "lambda-ts"  --query "Stacks[0].Outputs[?OutputKey=='BucketName'].OutputValue" --output text
 
 tasks:
+  show:
+    cmds:
+      - echo {{.bucket}}
   default:
     cmds:
       - task -l
