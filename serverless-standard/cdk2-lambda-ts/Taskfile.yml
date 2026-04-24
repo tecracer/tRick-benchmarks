@@ -45,7 +45,7 @@ tasks:
       - npx cdk@latest destroy
 
   copy-file:
-    desc: Copy readme t s3
+    desc: Copy readme to s3
     cmds:
       - aws s3 cp README.md s3://{{.bucket}}
 

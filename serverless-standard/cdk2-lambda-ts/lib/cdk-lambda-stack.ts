@@ -1,4 +1,5 @@
 import { StackProps, Stack, CfnOutput, RemovalPolicy } from "aws-cdk-lib";
+import { StringParameter } from "aws-cdk-lib/aws-ssm";
 import {
   LambdaInsightsVersion,
   Runtime,
@@ -46,6 +47,11 @@ export class CdkLambdaStack extends Stack {
     });
     new CfnOutput(this, "BucketName", {
       value: bucky.bucketName,
+    });
+    new StringParameter(this, "BucketNameParameter", {
+      parameterName: "/trick/bucket",
+      description: "Bucket name for trick stacks",
+      stringValue: bucky.bucketName,
     });
     // Tell Lambda the dynamic bucket name
     fn.addEnvironment("Bucket", bucky.bucketName);
