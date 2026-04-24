@@ -4,12 +4,18 @@ import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Bucket, BlockPublicAccess, EventType } from 'aws-cdk-lib/aws-s3';
 import { S3EventSource } from 'aws-cdk-lib/aws-lambda-event-sources';
 import { Table, AttributeType, BillingMode } from 'aws-cdk-lib/aws-dynamodb'
-import { RetentionDays } from 'aws-cdk-lib/aws-logs';
+import { RetentionDays, LogGroup } from 'aws-cdk-lib/aws-logs';  // Added LogGroup
 import { Construct } from 'constructs';
 
 export class CdkLambdaStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
+    
+    // Create log group first
+    const logGroup = new LogGroup(this, 'FunctionLogGroup', {
+      retention: RetentionDays.ONE_MONTH,
+      removalPolicy: RemovalPolicy.DESTROY, // Clean up logs when stack is deleted
+    });
 
     const fn = new NodejsFunction(this, "fn", {
       entry: 'lambda/index.ts',
@@ -17,16 +23,15 @@ export class CdkLambdaStack extends Stack {
       runtime: Runtime.NODEJS_16_X,
       memorySize: 1024,
       description: "trick-serverless-typescript-2022",
-      logRetention: RetentionDays.ONE_MONTH,
+      logGroup: logGroup,  // Changed from logRetention
       insightsVersion: LambdaInsightsVersion.VERSION_1_0_143_0,
       tracing: Tracing.ACTIVE,
     })
-
+    
     new CfnOutput(this, "LambdaName", {
       value: fn.functionName,
       exportName: 'lambda-trick-ts-name',
     })
-
 
     // Bucket start ****************
     // *
@@ -43,14 +48,12 @@ export class CdkLambdaStack extends Stack {
     bucky.grantRead(fn);
     // *
     // Bucket end *******************
-
     // Event start *******************
     fn.addEventSource(new S3EventSource(bucky, {
       events: [
         EventType.OBJECT_CREATED]
     }))
     // Event End   *******************
-
     //** Dynamodb start */
     const table = new Table(this, 'items-ts', {
       partitionKey: {
@@ -60,17 +63,13 @@ export class CdkLambdaStack extends Stack {
       removalPolicy: RemovalPolicy.DESTROY, // NOT recommended for production code
       billingMode: BillingMode.PAY_PER_REQUEST
     });
-
     fn.addEnvironment('TableName', table.tableName);
-
     // least privileges
     table.grantReadWriteData(fn);
-
     new CfnOutput(this, 'TableName', {
       value: table.tableName,
       exportName: 'trick-Table-ts-name',
     });
     //** Dynamodb End */
-
   }
 }
