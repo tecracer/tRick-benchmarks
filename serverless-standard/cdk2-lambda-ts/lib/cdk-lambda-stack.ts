@@ -17,6 +17,7 @@ export class CdkLambdaStack extends Stack {
 
     // Create log group first
     const logGroup = new LogGroup(this, "FunctionLogGroup", {
+      logGroupName: "/trick/event-lambda",
       retention: RetentionDays.ONE_MONTH,
       removalPolicy: RemovalPolicy.DESTROY, // Clean up logs when stack is deleted
     });
@@ -25,7 +26,7 @@ export class CdkLambdaStack extends Stack {
       functionName: "trick",
       entry: "lambda/index.ts",
       handler: "lambdaHandler",
-      runtime: Runtime.NODEJS_16_X,
+      runtime: Runtime.NODEJS_24_X,
       memorySize: 1024,
       description: "trick-serverless-typescript-2022",
       logGroup: logGroup, // Changed from logRetention
