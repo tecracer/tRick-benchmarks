@@ -1,0 +1,41 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      golang: 1.16
+      nodejs: 14
+    commands:
+      - go get -u github.com/jstemmer/go-junit-report      
+      - echo Installing CDK..
+      - npm npm-check-updates
+      - cd $CODEBUILD_SRC_DIR/serverless-standard/cdk2-lambda-go/infra
+      - ncu -u
+      - npm i
+  build:
+    commands:
+      - echo Unit Testing infra...
+      - cd $CODEBUILD_SRC_DIR/serverless-standard/cdk2-lambda-go/infra
+      - npm run test
+      - echo Deploying infra
+      - cd $CODEBUILD_SRC_DIR/architectures/serverless/infra
+      - cdk deploy --require-approval never
+      - echo Integration Testing
+      - cd $CODEBUILD_SRC_DIR/architectures/serverless/integ
+      - export I_TEST=yes &&  go test -v  2>&1 | go-junit-report >$CODEBUILD_SRC_DIR/testreports/report-integ-cdk2-lambda-go.xml
+  post_build:
+    commands:
+      - cd $CODEBUILD_SRC_DIR/architectures/serverless/infra
+      - echo Destroying infra
+      - cdk destroy -f
+      
+
+reports:
+  gotest_reports:
+    files:
+      - report-infra-cdk2-lambda-go.xml
+      - report-integ-cdk2-lambda-go.xml
+    base-directory: $CODEBUILD_SRC_DIR/testreports
+    file-format: JUNITXML
+
+ 

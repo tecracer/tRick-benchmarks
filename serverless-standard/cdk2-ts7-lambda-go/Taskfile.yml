@@ -1,0 +1,38 @@
+# https://taskfile.dev
+
+version: "3"
+
+includes:
+  app:
+    taskfile: ./app/Taskfile.yml
+    dir: ./app
+  infra:
+    taskfile: ./infra/Taskfile.yml
+    dir: ./infra
+
+tasks:
+  bootstrap:
+    dir: infra
+    desc: CDK bootstrap
+    cmds:
+      - task: infra:bootstrap
+
+  deploy:
+    desc: Deploy stack
+    dir: infra
+    cmds:
+      - ncu -u
+      - bun i
+      - npx cdk deploy --require-approval never
+    silent: true
+
+  destroy:
+    desc: Destroy stack
+    dir: infra
+    cmds:
+      - npx cdk destroy --force
+
+  update:
+    desc: Update function code
+    cmds:
+      - cd app && task fastdeploy

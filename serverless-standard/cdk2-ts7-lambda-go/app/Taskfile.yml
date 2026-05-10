@@ -1,0 +1,37 @@
+# https://taskfile.dev
+
+## Build Management only for go
+
+version: '3'
+
+vars:
+  ARTIFACTS_DIR: dist
+  ARTIFACTS_NAME: bootstrap
+env:
+  AWS_DEFAULT_REGION: eu-central-1
+
+tasks:
+  default:
+    deps: [build]
+
+  build:
+    desc: build go
+    cmds:
+      - mkdir -p {{.ARTIFACTS_DIR}}
+      - rm -f  {{.ARTIFACTS_DIR}}/*
+      - go mod tidy
+      - env GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -tags lambda.norpc -ldflags="-s -w" -o bootstrap main/main.go
+      - cp ./bootstrap {{.ARTIFACTS_DIR}}/{{.ARTIFACTS_NAME}}
+      - cd {{.ARTIFACTS_DIR}} && zip bootstrap.zip bootstrap 
+    silent: false
+
+  fastdeploy:
+    desc: Deploy only lambda
+    deps: [build]
+    vars:
+      FN:      
+        sh: aws cloudformation list-exports --query "Exports[?Name == 'lambda-go-name'].Value" --output text
+    cmds:
+      - aws lambda update-function-code --function-name  {{.FN}} --zip-file fileb://dist/bootstrap.zip
+
+
