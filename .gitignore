@@ -31,3 +31,7 @@ serverless-standard/cloudformation/lambda/dist
 serverless-standard/cdk2-lambda-go/app/dist
 .aws-sam
 .task
+serverless-standard/terraform-lambda-go/app/dist
+serverless-standard/cdk2-ts7-lambda-go/app/dist
+serverless-standard/cdk2-ts7-lambda-go/app/bootstrap
+serverless-standard/terraform-lambda-go/app/bootstrap

@@ -1,0 +1,62 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  init:
+    desc: Initialize Terraform
+    cmds:
+      - terraform init
+
+  plan:
+    desc: Plan Terraform changes
+    cmds:
+      - terraform plan
+
+  apply:
+    desc: Apply Terraform changes
+    cmds:
+      - terraform apply
+
+  deploy:
+    desc: Deploy infrastructure (auto-approve)
+    cmds:
+      - terraform apply -auto-approve
+
+  destroy:
+    desc: Destroy infrastructure
+    cmds:
+      - terraform destroy
+
+  force-destroy:
+    desc: Destroy infrastructure (auto-approve)
+    cmds:
+      - terraform destroy -auto-approve
+
+  update-lambda:
+    desc: Update only Lambda function code
+    cmds:
+      - terraform apply -target=aws_lambda_function.lambda_go -auto-approve
+
+  output:
+    desc: Show outputs
+    cmds:
+      - terraform output
+
+  validate:
+    desc: Validate Terraform configuration
+    cmds:
+      - terraform validate
+
+  fmt:
+    desc: Format Terraform files
+    cmds:
+      - terraform fmt -recursive
+
+  clean:
+    desc: Clean Terraform cache and state
+    cmds:
+      - rm -rf .terraform
+      - rm -f .terraform.lock.hcl
+      - rm -f terraform.tfstate*
+    prompt: This will delete all Terraform state and cache. Continue?
