@@ -1,5 +1,6 @@
 {
-  "app": "npx tsgo",
+  "app": "node bin/cdk2-lambda-python.js",
+  "build": "npx tsgo",
   "watch": {
     "include": ["**"],
     "exclude": [
