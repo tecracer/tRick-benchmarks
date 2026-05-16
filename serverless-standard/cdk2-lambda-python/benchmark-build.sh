@@ -59,8 +59,8 @@ time cdk synth > log.simple.ts6.2.txt 2>&1
 echo "===== ************ ====="
 echo "===== TypeScript 7 ====="
 echo "===== ************ ====="
-rm bin/cdk2-lambda-python.js
-rm lib/cdk2-lambda-python-stack.js
+rm -f bin/cdk2-lambda-python.js
+rm -f lib/cdk2-lambda-python-stack.js
 cp tsconfig.json-ts7 tsconfig.json
 cp cdk.json-ts7 cdk.json
 cp package.json-ts7 package.json
@@ -96,8 +96,8 @@ echo ""
 echo "Cleaning previous build artifacts..."
 rm -rf cdk.out
 rm -rf .venv
-rm bin/cdk2-lambda-python.js
-rm lib/cdk2-lambda-python-stack.js
+rm -f bin/cdk2-lambda-python.js
+rm -f lib/cdk2-lambda-python-stack.js
 echo "Restoring simple..."
 cp lambda-python/requirements.txt.simple  lambda-python/requirements.txt
 cp lambda-python/app.py.simple  lambda-python/app.py
@@ -111,17 +111,10 @@ echo ""
 echo "Build completed! Check the output above for timing."
 echo ""
 
-
-echo "Cleaning previous build artifacts..."
-rm -rf cdk.out
-rm -rf .venv
-rm bin/cdk2-lambda-python.js
-rm lib/cdk2-lambda-python-stack.js
-echo "Restoring simple..."
-cp lambda-python/requirements.txt.simple  lambda-python/requirements.txt
-cp lambda-python/app.py.simple  lambda-python/app.py
-
-echo "--- Simple: Testing with simple  ---"
-cp lib/cdk2-lambda-python-stack.ts.simple lib/cdk2-lambda-python-stack.ts
-time cdk synth > log.simple.ts7.1.txt 2>&1
-time cdk synth > log.simple.ts7.2.txt 2>&1
+echo "--- Deploy simplest version ---"
+cdkstat
+time cdk deploy --require-approval never > log.simple.ts7.deploy.txt 2>&1
+cdkstat
+echo "--- Destroy simplest version ---"
+time cdk destroy --force > log.simple.ts7.deploy.txt 2>&1
+cdkstat
