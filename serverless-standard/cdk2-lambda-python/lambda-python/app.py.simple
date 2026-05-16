@@ -3,9 +3,6 @@ import logging
 import os
 
 import boto3
-from aws_xray_sdk.core import patch_all, xray_recorder
-
-patch_all()
 
 # import requests
 

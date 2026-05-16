@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
+    "target": "ES2018",
+    "module": "commonjs",
     "lib": [
-      "es2022"
+      "es2018"
     ],
     "declaration": true,
     "strict": true,
@@ -20,7 +19,6 @@
     "inlineSources": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
-    "types": ["node", "jest"],
     "typeRoots": [
       "./node_modules/@types"
     ]

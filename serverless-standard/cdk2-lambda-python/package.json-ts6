@@ -2,7 +2,7 @@
   "name": "cdk2-lambda-python",
   "version": "0.1.0",
   "bin": {
-    "cdk2-lambda-python": "bin/cdk2-lambda-python.js"
+    "cdk2-lambda-python": "bin/cdk2-lambda-python.ts"
   },
   "scripts": {
     "build": "tsc",

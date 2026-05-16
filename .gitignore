@@ -35,3 +35,4 @@ serverless-standard/terraform-lambda-go/app/dist
 serverless-standard/cdk2-ts7-lambda-go/app/dist
 serverless-standard/cdk2-ts7-lambda-go/app/bootstrap
 serverless-standard/terraform-lambda-go/app/bootstrap
+log*txt

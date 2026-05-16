@@ -1,0 +1,34 @@
+# https://taskfile.dev
+
+version: "3"
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - task -l
+    silent: true
+
+  init:
+    desc: Install some dependencies
+    cmds:
+      - npm i npm-check-updates -g
+
+  deploy:
+    desc: Deploy stack
+    cmds:
+      - npm i
+      - npx cdk deploy --require-approval never
+    silent: true
+
+  destroy:
+    desc: Destroy stack
+    cmds:
+      - npx cdk destroy --force
+
+  update:
+    desc: Update function code
+    cmds:
+      - echo tbd
