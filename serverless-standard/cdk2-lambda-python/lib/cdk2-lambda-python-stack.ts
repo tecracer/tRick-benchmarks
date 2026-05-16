@@ -8,7 +8,6 @@ import {
   Stack,
   StackProps,
 } from "aws-cdk-lib";
-import { PythonFunction } from "@aws-cdk/aws-lambda-python-alpha";
 import { Construct } from "constructs";
 import { RetentionDays } from "aws-cdk-lib/aws-logs";
 
@@ -16,16 +15,15 @@ export class Cdk2LambdaPythonStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    const fn = new PythonFunction(this, "MyFunction", {
-      entry: "./lambda-python", // required
-      index: "app.py", // optional, defaults to 'index.py'
-      handler: "lambda_handler", // optional, defaults to 'handler'
+    // Use native Lambda Function - no Docker bundling, just zip
+    const fn = new aws_lambda.Function(this, "MyFunction", {
       runtime: aws_lambda.Runtime.PYTHON_3_14,
+      handler: "app.lambda_handler",
+      code: aws_lambda.Code.fromAsset("./lambda-python"),
       memorySize: 1024,
       description: "trick-serverless-python",
       logRetention: RetentionDays.ONE_MONTH,
       insightsVersion: aws_lambda.LambdaInsightsVersion.VERSION_1_0_135_0,
-      tracing: aws_lambda.Tracing.ACTIVE,
     });
 
     new CfnOutput(this, "LambdaName", {

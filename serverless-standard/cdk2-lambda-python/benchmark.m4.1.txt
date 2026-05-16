@@ -1,0 +1,108 @@
+===== CDK Lambda Build Time Comparison =====
+
+===== ************ =====
+===== TypeScript 6 =====
+===== ************ =====
+rm: bin/cdk2-lambda-python.js: No such file or directory
+rm: lib/cdk2-lambda-python-stack.js: No such file or directory
+
+up to date, audited 371 packages in 692ms
+
+50 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+--- Default: Testing with pip  ---
+Restoring  default...
+Cleaning previous build artifacts...
+
+real	0m13.667s
+user	0m4.382s
+sys	0m0.824s
+
+real	0m6.535s
+user	0m3.904s
+sys	0m0.670s
+
+--- Tuned: Testing with UV  ---
+Restoring  tuned...
+
+real	0m7.418s
+user	0m3.944s
+sys	0m0.560s
+
+real	0m5.002s
+user	0m3.732s
+sys	0m0.478s
+
+Cleaning previous build artifacts...
+Restoring simple...
+--- Simple: Testing with simple  ---
+
+real	0m5.155s
+user	0m3.982s
+sys	0m0.551s
+
+real	0m4.834s
+user	0m3.701s
+sys	0m0.474s
+===== ************ =====
+===== TypeScript 7 =====
+===== ************ =====
+
+up to date, audited 371 packages in 930ms
+
+50 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+--- Default: Testing with pip  ---
+Restoring  default...
+Cleaning previous build artifacts...
+
+real	0m8.798s
+user	0m3.125s
+sys	0m0.808s
+
+real	0m3.329s
+user	0m2.813s
+sys	0m0.646s
+
+--- Tuned: Testing with UV  ---
+Restoring  tuned...
+
+real	0m4.688s
+user	0m2.896s
+sys	0m0.694s
+
+real	0m2.724s
+user	0m2.714s
+sys	0m0.678s
+
+Cleaning previous build artifacts...
+Restoring simple...
+--- Simple: Testing with simple  ---
+
+real	0m3.094s
+user	0m3.123s
+sys	0m0.691s
+
+real	0m2.739s
+user	0m2.957s
+sys	0m0.566s
+
+Build completed! Check the output above for timing.
+
+--- Deploy simplest version ---
+2026/05/16 13:52:48 operation error CloudFormation: DescribeStacks, https response error StatusCode: 403, RequestID: cadd9c6b-eeb0-44f8-bd09-ca0825bb0a6d, api error ExpiredToken: The security token included in the request is expired
+
+real	0m2.777s
+user	0m2.702s
+sys	0m0.518s
+2026/05/16 13:52:50 operation error CloudFormation: DescribeStacks, https response error StatusCode: 403, RequestID: afcfae6b-a841-422e-8b0c-ad1fa67d3522, api error ExpiredToken: The security token included in the request is expired
+--- Destroy simplest version ---
+
+real	0m2.683s
+user	0m2.523s
+sys	0m0.484s
+2026/05/16 13:52:53 operation error CloudFormation: DescribeStacks, https response error StatusCode: 403, RequestID: edabf558-e978-41c0-9e7c-496b12483f6d, api error ExpiredToken: The security token included in the request is expired
