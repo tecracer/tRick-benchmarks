@@ -17,15 +17,31 @@ export class Cdk2LambdaPythonStack extends Stack {
     super(scope, id, props);
 
     const fn = new PythonFunction(this, "MyFunction", {
+      description: "trick-serverless-python",
       entry: "./lambda-python", // required
       index: "app.py", // optional, defaults to 'index.py'
       handler: "lambda_handler", // optional, defaults to 'handler'
       runtime: aws_lambda.Runtime.PYTHON_3_14,
       memorySize: 1024,
-      description: "trick-serverless-python",
       logRetention: RetentionDays.ONE_MONTH,
       insightsVersion: aws_lambda.LambdaInsightsVersion.VERSION_1_0_135_0,
       tracing: aws_lambda.Tracing.ACTIVE,
+      bundling: {
+        // Use custom bundling with uv for ultra-fast builds
+        image: aws_lambda.Runtime.PYTHON_3_14.bundlingImage,
+        command: [
+          "bash",
+          "-c",
+          [
+            // Install uv (ultra-fast Python package installer - 10-100x faster than pip)
+            "pip install uv",
+            // Use uv to install dependencies to /asset-output
+            "UV_CACHE_DIR=/tmp/uv-cache uv pip install --system --target /asset-output -r requirements.txt",
+            // Copy application code
+            "cp -r . /asset-output",
+          ].join(" && "),
+        ],
+      },
     });
 
     new CfnOutput(this, "LambdaName", {

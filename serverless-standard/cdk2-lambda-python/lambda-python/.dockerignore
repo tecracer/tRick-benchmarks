@@ -1,0 +1,19 @@
+# Exclude unnecessary files from Docker build context
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+ENV/
+.DS_Store
+.git/
+.gitignore
+*.log
